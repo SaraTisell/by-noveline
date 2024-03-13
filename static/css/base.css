@@ -1,3 +1,10 @@
+/* Override default styles added from browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* Genreal body styles */
 
 body {
@@ -18,3 +25,11 @@ i {
     margin-right: 4px;
 }
 
+#icon-nav {
+    padding-top: 20px;
+}
+
+
+#search-form {
+    border-color: #993F64;
+}
