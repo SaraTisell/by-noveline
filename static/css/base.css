@@ -1,0 +1,20 @@
+/* Genreal body styles */
+
+body {
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    color: #423838;
+    font-family: "Poiret One", sans-serif;
+    font-weight: bolder;
+}
+
+.dropdown-item {
+    font-weight: bolder;
+}
+
+i {
+    color: #993F64;
+    font-size: 25px;
+    margin-right: 4px;
+}
+
