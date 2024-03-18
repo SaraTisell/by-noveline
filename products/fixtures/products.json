@@ -1,0 +1,159 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "sidi10001",
+            "name": "Tess Diamonds Ring",
+            "description": "Tess Diamond is made of the finest sterling silver and adorned with a total of 23 diamonds of 4 carats in weight.",
+            "price": 4500,
+            "category": 2,
+            "image": "tess-wedding-diamond-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "godi10002",
+            "name": "Enya Gold Diamond Ring",
+            "description": "Enya Gold Diamond Ring is an elegant ring made of 18 carat gold decorated with 1 carat of diamonds.",
+            "price": 2500,
+            "category": 1,
+            "image": "enya-gold-diamond-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "sego10003",
+            "name": "Oscar Ring Set",
+            "description": "Oscar Ring Set is a beautiful set of rings made of 18 carat white and yellow gold.",
+            "price": 4000,
+            "category": 3,
+            "image": "oscar-engagement-rings-set.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "sidi10004",
+            "name": "Anne Diamond Ring",
+            "description": "Anne Diamond Ring is made of steriling silver with an beautiful design adorned with 3 carats of diamonds.",
+            "price": 3550,
+            "category": 2,
+            "image": "anne-diamond-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "godi10005",
+            "name": "Tulay Gold Diamond Ring",
+            "description": "Tulay Gold Diamond Ring in 18 carat yellow gold adorned with 1 carat diamond.",
+            "price": 1400,
+            "category": 1,
+            "image": "tulay-gold-diamond-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "segosi10006",
+            "name": "Cherry Gold and Silver Set",
+            "description": "Cherry Gold and Silver Set is made of the finest sterling silver and 18 carat yellow gold.",
+            "price": 1000,
+            "category": 3,
+            "image": "cherry-silver-gold-rings-set.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "si10007",
+            "name": "Adam Silver Ring",
+            "description": "Adam Silver Ring is made of sterling silver with a soft, rounded design.",
+            "price": 550,
+            "category": 2,
+            "image": "adam-ring-silver.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "go10008",
+            "name": "Berk Gold Ring",
+            "description": "Berk Gold ring is a elegant ring made of 18 carat yellow gold",
+            "price": 850,
+            "category": 1,
+            "image": "berk-golden-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "sego10009",
+            "name": "Belle Ring Set",
+            "description": "Belle Ring Set is a beautiful designed set of rings made of 18 carat white and yellow gold, one ring is adorned with 2 carat of diamonds.",
+            "price": 5500,
+            "category": 3,
+            "image": "belle-engagement-rings-set.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "sidi100010",
+            "name": "Vanessa Diamond Ring",
+            "description": "Vanessa Diamond Ring is a elegant designed ring made of sterling silver decorated with 1 carat diamond.",
+            "price": 1200,
+            "category": 2,
+            "image": "vanessa-diamond-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "go100011",
+            "name": "Alexander Rose Gold Ring",
+            "description": "Alexander Rose Gold Ring is made of 18 carat rose gold, and has appealing structured design.",
+            "price": 900,
+            "category": 1,
+            "image": "alexander-rose-gold-ring.webp",
+            "image_url": ""
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "sego100012",
+            "name": "Michelle Gold Rings Set",
+            "description": "Michelle Gold Rings Set is a classic elegant set of 18 carat yellow gold rings.",
+            "price": 1400,
+            "category": 3,
+            "image": "michelle-gold-rings-set.webp",
+            "image_url": ""
+        }
+    }
+
+]
