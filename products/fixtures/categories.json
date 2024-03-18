@@ -19,8 +19,8 @@
         "pk": 3,
         "model": "products.category",
         "fields": {
-            "name": "diamond_rings",
-            "friendly_name": "Diamond Rings"
+            "name": "ring_sets",
+            "friendly_name": "Ring Sets"
         }
     }
 ]
