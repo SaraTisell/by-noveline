@@ -25,16 +25,31 @@
     background-color: pink;
 }
 
-@media (max-width: 575px) {
+
+.product-title {
+    font-family: "Alex Brush", sans-serif;
+
+}
+
+
+
+@media (max-width: 569px) {
     .custom-product-col {
         flex: 0 0 auto;
         width: 50%;
     }
+
+    
 }
+
 
 @media (min-width: 769px) {
     .product-container {
-        padding: 10px 50px;
+        width: 70%;
+        
     }
-
+    
+    .detail-div {
+        padding: 100px 10px;
+    }
 }

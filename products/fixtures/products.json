@@ -9,7 +9,8 @@
             "price": 4500,
             "category": 2,
             "image": "tess-wedding-diamond-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "tess-diamonds-ring"
         }
     },
     {
@@ -22,7 +23,8 @@
             "price": 2500,
             "category": 1,
             "image": "enya-gold-diamond-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "enya-gold-diamond-ring"
         }
     },
     {
@@ -35,7 +37,8 @@
             "price": 4000,
             "category": 3,
             "image": "oscar-engagement-rings-set.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "oscar-ring-set"
         }
     },
     {
@@ -48,7 +51,8 @@
             "price": 3550,
             "category": 2,
             "image": "anne-diamond-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "anne-diamond-ring"
         }
     },
     {
@@ -61,7 +65,8 @@
             "price": 1400,
             "category": 1,
             "image": "tulay-gold-diamond-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "tulay-gold-diamond-ring"
         }
     },
     {
@@ -74,7 +79,8 @@
             "price": 1000,
             "category": 3,
             "image": "cherry-silver-gold-rings-set.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "cherry-gold-and-silver-set"
         }
     },
     {
@@ -87,7 +93,8 @@
             "price": 550,
             "category": 2,
             "image": "adam-ring-silver.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "adam-silver-ring"
         }
     },
     {
@@ -100,7 +107,8 @@
             "price": 850,
             "category": 1,
             "image": "berk-golden-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "berk-gold-ring"
         }
     },
     {
@@ -113,7 +121,8 @@
             "price": 5500,
             "category": 3,
             "image": "belle-engagement-rings-set.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "belle-ring-set"
         }
     },
     {
@@ -126,7 +135,8 @@
             "price": 1200,
             "category": 2,
             "image": "vanessa-diamond-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "vanessa-diamond-ring"
         }
     },
     {
@@ -139,7 +149,8 @@
             "price": 900,
             "category": 1,
             "image": "alexander-rose-gold-ring.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "alexander-rose-gold-ring"
         }
     },
     {
@@ -152,7 +163,8 @@
             "price": 1400,
             "category": 3,
             "image": "michelle-gold-rings-set.webp",
-            "image_url": ""
+            "image_url": "",
+            "slug": "michelle-gold-rings-set"
         }
     }
 
