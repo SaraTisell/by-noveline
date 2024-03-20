@@ -5,11 +5,26 @@ from .models import Category, Product
 
 class AllProducts(ListView):
     """ View to display all products """
+    """ View to sort products based on category"""
 
     model = Product
     template_name = 'products/products.html'
     context_object_name = 'products'
 
+    # Function to retrieve products based on selected category from nav link
+    def get_queryset(self):
+        category_name = self.request.GET.get('category')
+        if category_name:
+            return Product.objects.filter(category__name=category_name)
+        else:
+            return Product.objects.all()
+
+    # Get category_name to use in template
+    def get_context_data(self, **kwargs):
+        context = super(AllProducts, self).get_context_data(**kwargs)
+        context['category_name'] = self.request.GET.get('category')
+
+        return context
 
 class SearchResultsView(ListView):
     """ View to display products based on search queries """

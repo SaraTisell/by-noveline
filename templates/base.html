@@ -121,16 +121,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link category-link" aria-current="page" href="#">All Products</a>
+                  <a class="nav-link category-link" aria-current="page" href="{% url 'products' %}">All Products</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link category-link" href="#">Gold Rings</a>
+                  <a class="nav-link category-link" href="{% url 'products' %}?category=gold_rings">Gold Rings</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link category-link" href="#">Silver Rings</a>
+                  <a class="nav-link category-link" href="{% url 'products' %}?category=silver_rings">Silver Rings</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link category-link" href="#">Diamond Rings</a>
+                  <a class="nav-link category-link" href="{% url 'products' %}?category=ring_sets">Ring Sets</a>
                 </li>
               </ul>
             </div>

@@ -2,8 +2,19 @@
 {% load static %}
 
 {% block extra_meta %}
-    <meta name="description" content="Beautiful wedding rings, engagement rings and diamond rings made on request By Noveline.">
-    <meta name="keywords" content="by noveline, diamond ring, gold ring, sterling silver rings, wedding ring sets, engagement rings">
+    {% if category_name == 'gold_rings' %}
+        <meta name="description" content="By Noveline's beautiful gold rings collection.">
+        <meta name="keywords" content="by noveline, 1 carat diamond ring, gold rings for women, gold rings for men, white gold, rose gold"> 
+    {% elif category_name == 'silver_rings' %}
+        <meta name="description" content="By Noveline's beautiful silver rings collection, made of sterling silver.">
+        <meta name="keywords" content="by noveline, diamond ring, silver rings, sterling silver rings, 1 carat diamond ring"> 
+    {% elif category_name == 'ring_sets' %}
+        <meta name="description" content="By Noveline's collection of ring sets. beautiful rings for engagements and weddings.">
+        <meta name="keywords" content="by noveline, wedding ring sets, engagement rings, gold ring sets, diamond ring">
+    {% else %}
+        <meta name="description" content="Beautiful wedding rings, engagement rings and diamond rings made on request By Noveline.">
+        <meta name="keywords" content="by noveline, diamond ring, gold ring, sterling silver rings, wedding ring sets, engagement rings">      
+    {% endif %}
 {% endblock %}
 
 {% block extra_css%}
@@ -15,7 +26,15 @@
 <div class="container-fluid product-container">
     <div class="row">
         <div class="col text-center mt-3">
-            <h1>Rings & Ring Sets</h1>
+            {% if category_name == 'gold_rings' %}
+                <h1>Gold Rings</h1>
+            {% elif category_name == 'silver_rings' %}
+                <h1>Silver Rings</h1>
+            {% elif category_name == 'ring_sets' %}
+                <h1>Ring Sets</h1>
+            {% else %}
+                <h1>Rings & Ring Sets</h1>
+            {% endif %}
             <hr>
         </div>
     </div>
