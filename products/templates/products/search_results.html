@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_meta %}
+    <meta name="description" content="Beautiful wedding rings, engagement rings and diamond rings made on request By Noveline.">
+    <meta name="keywords" content="by noveline, diamond ring, gold ring, sterling silver rings, wedding ring sets, engagement rings">
+{% endblock %}
+
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid product-container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1>Search Results for '{{ search_term }}'</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+    {% if object_list %}
+        {% for product in object_list %}
+            <div class="col-sm-6 col-md-4 col-lg-3 custom-product-col mb-4">
+                <div class="card h-100">
+                    <a href="{% url 'product_detail' product.slug %}">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-title"><strong>{{ product.name }}</strong></p>
+                        <p class="card-text">${{ product.price }}</p>
+                        <a href="#" class="btn btn-primary add-button">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+                <h3>Sorry, no products matches '{{ search_term }}'</h3>
+    {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
