@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from .models import Category, Product
+from .forms import AdminAddProductForm
 
 class AllProducts(ListView):
     """ View to display all products """
@@ -51,3 +54,19 @@ class ProductDetail(DetailView):
     model = Product
     template_name = 'products/product_detail.html'
     slug_field = 'slug'
+
+class AddNewProduct(UserPassesTestMixin, CreateView):
+    """ View to render AdminAddProductForm """
+
+    template_name = 'products/add_product.html'
+    form_class = AdminAddProductForm
+    success_url = reverse_lazy('add_product')
+
+    def test_func(self):
+        """ Test user is superuser """
+        return self.request.user.is_superuser
+
+
+
+
+
