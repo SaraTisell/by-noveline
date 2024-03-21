@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.contrib import messages
@@ -78,7 +78,7 @@ class AddNewProduct(UserPassesTestMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['products'] = Product.objects.all().order_by('category')
-        
+
         return context
 
 
@@ -115,7 +115,15 @@ class UpdateProduct(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
         return self.request.user.is_superuser
 
 
+class DeleteProduct(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+    """ View to delete an existing product """
+    model = Product
+    template_name = 'products/delete_product_confirm.html'
+    success_url = reverse_lazy('manage_products')
+    success_message = "Product Deleted!"
 
-
+    def test_func(self):
+        """ Test user is superuser """
+        return self.request.user.is_superuser
 
 

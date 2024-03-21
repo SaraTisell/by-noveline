@@ -11,11 +11,11 @@
     <div class="row">
         <div class="col md-4 mx-auto">
             {% for message in messages %}
-          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            {{ message | safe }}
-          </div>
-          {% endfor %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                {{ message | safe }}
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -23,13 +23,10 @@
 
 <div class="container-fluid product-container">
     <div class="row">
-        <div class="col">
-
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                aria-expanded="true" aria-controls="collapseExample">
-                Add Product
-            </button>
-            <div class="collapse" id="collapseExample">
+        <div class="col ">    
+            <a href="#" data-bs-toggle="collapse" data-bs-target="#collapseProductForm"
+            aria-expanded="true" aria-controls="collapseProductForm">Add Product</a>
+            <div class="collapse" id="collapseProductForm">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col">
@@ -50,9 +47,11 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <h2>All Products</h2>
             {% for product in products %}
-            <div class="row">
-                <div class="col-md-1">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-1 vertical-align-center">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.slug %}">
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -63,11 +62,14 @@
                     </a>
                     {% endif %}
                 </div>
-                <div class="col-md-2">{{ product.name }}</div>
+                <div class="col-md-2 col-sm-2">{{ product.name }}</div>
                 <div class="col-md-2">{{ product.sku }}</div>
-                <div class="col-md-2">{{ product.price }}</div>
+                <div class="col-md-2">${{ product.price }}</div>
                 <div class="col-md-2">{{ product.category.friendly_name }}</div>
-                <div class="col-md-2"><a href="{% url 'update_product' product.pk %}">Update</a></div>
+                <div class="col-md-2"><a href="{% url 'update_product' product.pk %}"><i class="fa-solid fa-pen"></i></a> | <a
+                        href="{% url 'delete_product' product.pk %}"><i class="fa-solid fa-trash"></i></a>
+                </div>
+                <hr>
             </div>
             {% endfor %}
         </div>

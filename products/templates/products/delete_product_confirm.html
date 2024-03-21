@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid product-container">
+    <div class="row">
+        <div class="col">
+            <div class="col-md-6 mx-auto">
+                <h1>Confirm Delete</h1>
+      <p>Are you sure you want to delete product {{ product.name }}?</p>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit">DELETE</button>
+        <a href="{% url 'manage_products' %}">Go Back</a>
+      </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
