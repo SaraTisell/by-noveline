@@ -17,6 +17,7 @@ class AllProducts(ListView):
     template_name = 'products/products.html'
     context_object_name = 'products'
 
+
     def get_queryset(self):
         """ Function to retrieve products based on selected category from nav link """
         category_name = self.request.GET.get('category')
@@ -58,12 +59,18 @@ class ProductDetail(DetailView):
     template_name = 'products/product_detail.html'
     slug_field = 'slug'
 
-class AddNewProduct(UserPassesTestMixin, CreateView):
-    """ View to render AdminAddProductForm """
 
-    template_name = 'products/add_product.html'
+class AddNewProduct(UserPassesTestMixin, CreateView, ListView):
+    """ 
+        View for admin to add new product
+        And list all existing products
+    """
+
+    model = Product
+    template_name = 'products/manage_products.html'
     form_class = AdminAddProductForm
-    success_url = reverse_lazy('add_product')
+    success_url = reverse_lazy('manage_products')
+    context_object_name = 'products'
 
     def test_func(self):
         """ Test user is superuser """
@@ -84,7 +91,9 @@ class AddNewProduct(UserPassesTestMixin, CreateView):
         """ If form is not valid an error message is displayed """
         messages.error = (self.request, "FAILED TO ADD PRODUCT - ensure all field is valid")
         return super().form_invalid(form)
-          
+
+    def get_queryset(self):
+        return Product.objects.all().order_by('category')
 
 
 

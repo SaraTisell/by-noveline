@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col md-4 mx-auto">
+            {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{ message | safe }}
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid product-container">
+    <div class="row">
+        <div class="col">
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="true" aria-controls="collapseExample">
+                Add Product
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="col-md-6 mx-auto">
+                                <h1>Add New Product</h1>
+                                <form method="POST" action="{% url 'manage_products' %}" class="form mb-2"
+                                    enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="text-right">
+                                        <a class="btn btn-outline-black rounded-0"
+                                            href="{% url 'products' %}">Cancel</a>
+                                        <button class="btn btn-black rounded-0" type="submit">Add Product</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% for product in products %}
+            <div class="row">
+                <div class="col-md-1">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.slug %}">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.slug %}">
+                        <img src="/media/by-noveline-no-image.webp" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="col-md-2">{{ product.name }}</div>
+                <div class="col-md-2">{{ product.sku }}</div>
+                <div class="col-md-2">{{ product.price }}</div>
+                <div class="col-md-2">{{ product.category.friendly_name }}</div>
+                <div class="col-md-2"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
