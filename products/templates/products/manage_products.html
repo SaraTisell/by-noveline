@@ -41,7 +41,7 @@
                                     {{ form | crispy }}
                                     <div class="text-right">
                                         <a class="btn btn-outline-black rounded-0"
-                                            href="{% url 'products' %}">Cancel</a>
+                                            href="{% url 'manage_products' %}">Cancel</a>
                                         <button class="btn btn-black rounded-0" type="submit">Add Product</button>
                                     </div>
                                 </form>
@@ -67,7 +67,7 @@
                 <div class="col-md-2">{{ product.sku }}</div>
                 <div class="col-md-2">{{ product.price }}</div>
                 <div class="col-md-2">{{ product.category.friendly_name }}</div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2"><a href="{% url 'update_product' product.pk %}">Update</a></div>
             </div>
             {% endfor %}
         </div>

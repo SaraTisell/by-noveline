@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Category, Product
 from .forms import AdminAddProductForm
 
@@ -60,21 +61,27 @@ class ProductDetail(DetailView):
     slug_field = 'slug'
 
 
-class AddNewProduct(UserPassesTestMixin, CreateView, ListView):
+class AddNewProduct(UserPassesTestMixin, CreateView):
     """ 
         View for admin to add new product
         And list all existing products
     """
-
     model = Product
     template_name = 'products/manage_products.html'
     form_class = AdminAddProductForm
     success_url = reverse_lazy('manage_products')
-    context_object_name = 'products'
 
     def test_func(self):
         """ Test user is superuser """
         return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Product.objects.all().order_by('category')
+        
+        return context
+
+
 
     def form_valid(self, form):
         """ Test if form is valid
@@ -91,9 +98,22 @@ class AddNewProduct(UserPassesTestMixin, CreateView, ListView):
         """ If form is not valid an error message is displayed """
         messages.error = (self.request, "FAILED TO ADD PRODUCT - ensure all field is valid")
         return super().form_invalid(form)
+    
+    
 
-    def get_queryset(self):
-        return Product.objects.all().order_by('category')
+
+class UpdateProduct(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+    """ View to update an existing product """
+    model = Product
+    form_class = AdminAddProductForm
+    template_name = 'products/update_product.html'
+    success_url = reverse_lazy('manage_products')
+    success_message = "Product was successfully updated!"
+
+    def test_func(self):
+        """ Test user is superuser """
+        return self.request.user.is_superuser
+
 
 
 
