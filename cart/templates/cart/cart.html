@@ -29,14 +29,14 @@
     </div>
         {% for item in cart_items %}
         <div class="row d-flex align-items-center">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <img class="img-fluid" src="{{ item.product.image.url }}">
             </div>
             <div class="col-sm-3">
                 <p>{{ item.product.name}} <br> SKU: {{ item.product.sku|upper }} </p> 
             </div>
             <div class="col-sm-3">
-                <p>{{ item.product.size }} {% if item.product.size_ring_sets %} | {{ item.product.size.2 }} {% endif %}</p>
+                <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
             </div>
             <div class="col-sm-3">
                 <p>${{ item.product.price }}</p>
