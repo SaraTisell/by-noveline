@@ -89,6 +89,16 @@ body {
     margin: 0px;
 }
 
+/* Home page */
+.home-banner {
+    background-image: url('../images/bn-banner-diamond-ring.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
 /* Allauth forms */
 
 .allauth-background {
@@ -125,6 +135,9 @@ body {
     font-family: "Alex Brush", sans-serif;
 }
 
+
+
+/* Screen sizes */
 @media (min-width: 576px) {
     .header-row {
         padding: 10px 20px;
