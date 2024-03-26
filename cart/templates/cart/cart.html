@@ -11,6 +11,7 @@
         <div class="col">
             <h1>Shopping Cart</h1>
         </div>
+        <hr>
     </div>
     {% if cart_items %}
     <div class="row d-flex align-items-center">
@@ -24,24 +25,27 @@
             <p>Price</p>
         </div>
         <div class="col">
+            Size
+        </div>
+        <div class="col">
             <p>Qty</p>
         </div>
     </div>
         {% for item in cart_items %}
         <div class="row d-flex align-items-center">
-            <div class="col-sm-2">
+            <div class="col">
                 <img class="img-fluid" src="{{ item.product.image.url }}">
             </div>
-            <div class="col-sm-3">
+            <div class="col">
                 <p>{{ item.product.name}} <br> SKU: {{ item.product.sku|upper }} </p> 
             </div>
-            <div class="col-sm-3">
+            <div class="col">
                 <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
             </div>
-            <div class="col-sm-3">
+            <div class="col">
                 <p>${{ item.product.price }}</p>
             </div>
-            <div class="col-sm-3">
+            <div class="col">
                 <p>{{ item.quantity }}</p>
             </div>
         </div>
