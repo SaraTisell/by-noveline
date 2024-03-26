@@ -95,7 +95,35 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+    padding: 20px 10px 40px;
+}
+
+.banner-heading {
+    font-family: 'Alex Brush', sans-serif;
+    font-weight: bolder;
+    color: #7D696F;
+    text-shadow: 5px 5px 6px rgb(125, 105, 111, 0.9);
+    font-size: 30px;
+
+}
+
+.shop-btn-div {
+    margin-top: 8vh;
+}
+
+.shop-btn {
+    border: 2px solid #993F64;
+    background-color: rgb(153, 63, 100, 0.8);
+    color: #FFFFFF;
+    padding: 3px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 2px 2px rgb(125, 105, 111, 0.6);
+    font-size: 13px;
+}
+
+.shop-btn:hover {
+    background-color: #993F64;
 }
 
 
@@ -141,5 +169,15 @@ body {
 @media (min-width: 576px) {
     .header-row {
         padding: 10px 20px;
+    }
+    .home-banner {
+        padding: 50px 20px 150px 20px;
+    }
+    .banner-heading {
+        font-size: 55px;
+    }
+    .shop-btn {
+        padding: 8px 35px;
+        font-size: 16px;
     }  
 }
