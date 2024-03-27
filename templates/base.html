@@ -181,15 +181,24 @@
       </nav>
     </header>
 
+    <main>
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
 
     {% block content %}
     {% endblock %}
+    </main>
+
+ 
+    <!-- Footer -->
+    <footer>
+      {% include 'includes/footer.html' %}
+    </footer>
 
 
     {% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/c782e5ed24.js" crossorigin="anonymous"></script>

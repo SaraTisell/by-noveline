@@ -87,6 +87,12 @@ body {
     color: #423838;
     font-family: "Ysabeau Infant", sans-serif;
     margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* Home page */
@@ -125,6 +131,70 @@ body {
 .shop-btn:hover {
     background-color: #993F64;
 }
+
+/* Footer */
+
+footer {
+    background-color: #423838;
+    margin-top: 20px;
+    box-shadow: 0px -1px 6px #1b1a1a;
+}
+
+.footer-container {
+    background-color: #423838;
+    color: #FFFFFF;  
+}
+
+.footer-container a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-container a:hover {
+    color: #ffc0cb;
+}
+
+.footer-container h5 {
+    text-shadow: 5px 5px 6px #1b1a1a;
+}
+
+.footer-container i {
+    color: #FFFFFF;
+    text-shadow: 5px 5px 6px #1b1a1a;
+}
+
+.footer-container i:hover {
+    color: #993F64;
+}
+
+.footer-col-us {
+
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.footer-col {
+    margin: 40px 30px ;
+}
+
+.footer-end-container {
+    background-color: #993F64;
+    padding-top: 10px;
+    text-shadow: 1px 1px 1px #1b1a1a;
+    box-shadow: 0px -1px 9px #222121;
+}
+
+.footer-end-container i {
+    color: #423838;
+    font-size: 20px;
+}
+
+.copyright-text {
+    color: #FFFFFF;
+    text-shadow: 5px 5px 6px #1b1a1a;
+}
+
 
 
 /* Allauth forms */
