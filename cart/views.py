@@ -1,38 +1,33 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
+
 class ViewShoppingCart(TemplateView):
+    """ View to render cart """
 
     template_name = 'cart/cart.html'
 
 
 def add_to_cart(request, item_id):
+    """ Function to add item to cart """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = request.POST.get('selected_size')
-    size2 = None
-    if 'selected_size_ring_set' in request.POST:
-        size2 = request.POST['selected_size_ring_set']
+    size2 = request.POST.get ('selected_size_ring_set')
     cart = request.session.get('cart', {})
 
+    cart_key = f"{item_id}-{size}-{size2}" if size2 else f"{item_id}-{size}"
 
-    if item_id not in cart:
-        cart[item_id] = {}
-
-        if size in cart[item_id]:
-            cart[item_id][size] += quantity
-        else:
-            cart[item_id][size] = quantity
-    else:
-        cart[item_id] = {size: quantity}
+    if cart_key not in cart:
+        cart[cart_key] = {
+            'item_id': item_id,
+            'size': size,
+            'size2': size2,
+            'quantity': 0,
+        }
     
-        if size2:
-            if item_id in cart:
-                cart[item_id]['size2'] = size2
-            else:
-                cart[item_id] = {size: quantity, 'size2': size2}
-
+    cart[cart_key]['quantity'] += quantity
 
     request.session['cart'] = cart
     return redirect(redirect_url)

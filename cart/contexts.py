@@ -11,11 +11,14 @@ def cart_contents(request):
     shipping_cost = 9
     cart = request.session.get('cart', {})
 
-    for item_id, item_data in cart.items():
+    for cart_key, item_data in cart.items():
+        key_split = cart_key.split('-')
+        item_id = key_split[0]
+        size = key_split[1]
+        size2 = key_split[2] if len(key_split) > 2 else None
+
         if isinstance(item_data, dict):
-            quantity = item_data.get('quantity', 1)
-            size = item_data.get('size')
-            size2 = item_data.get('size2')
+            quantity = item_data.get('quantity', 0)
             product = get_object_or_404(Product, pk=item_id)
             subtotal += quantity * product.price
             product_count += quantity
