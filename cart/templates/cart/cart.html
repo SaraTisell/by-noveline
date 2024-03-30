@@ -46,7 +46,31 @@
                 <p>${{ item.product.price }}</p>
             </div>
             <div class="col">
-                <p>{{ item.quantity }}</p>
+                <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                    {% csrf_token %}
+                    <div class="form-group w-10">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <button class="decrement btn-sm update-qty-btn" data-item-id="{{ item.item_id }}" id="decrement_{{ item.item_id }}">
+                                <span>
+                                    <i class="fa-solid fa-minus fa-sm"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="9" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                        <div class="input-group-append">
+                            <button class="increment btn-sm update-qty-btn" data-item-id="{{ item.item_id }}" id="increment_{{ item.item_id }}">
+                                <span>
+                                    <i class="fa-solid fa-plus fa-sm"></i>
+                                </span>
+                            </button>
+                            <span class="remove-cart-item" data-cart-key="{{ cart_key }}">
+                                <i class="fa-solid fa-trash"></i>
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+                </form>
             </div>
         </div>
         {% endfor %}
@@ -61,4 +85,47 @@
         
     {% endif %}
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+
+    // Update quantity on click
+    $('.update-qty-btn').click(function (e) {
+
+        var closestInput = $(this).closest('.input-group').find('.qty_input');
+        var currentValue = parseInt($(closestInput).val());
+
+        var incrementQty = $(this).hasClass('increment');
+        var decrementQty = $(this).hasClass('decrement');
+
+        if (incrementQty) {
+            currentValue++;
+
+        } else if (decrementQty) {
+            currentValue--;
+        }
+
+        $(closestInput).val(currentValue);
+
+            var form = $(this).prev('.update-qty-form');
+                form.submit();
+    })
+    // Remove item from cart on click
+    $('.remove-cart-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var cartKey = $(this).data('cart-key');
+        var url = `/cart/remove/${cartKey}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+
+    })
+</script>
 {% endblock %}

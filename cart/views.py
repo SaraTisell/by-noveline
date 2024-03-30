@@ -31,3 +31,18 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+def adjust_cart(request, item_id):
+
+    quantity = int(request.POST.get('quantity'))
+    size = request.POST.get('selected_size')
+    size2 = request.POST.get ('selected_size_ring_set')
+    cart = request.session.get('cart', {})
+
+    cart_key = f"{item_id}-{size}-{size2}" if size2 else f"{item_id}-{size}"
+
+    if cart_key in cart:
+        cart[cart_key] = quantity
+
+    request.session['cart'] = cart
+    return redirect('cart')
