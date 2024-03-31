@@ -18,18 +18,18 @@
         <div class="col">
             <p>Product Info</p>
         </div>
+        <div class="col"> 
+        </div>
         <div class="col">
-            <p></p>
+            <p>Size</p>
         </div>
         <div class="col">
             <p>Price</p>
         </div>
         <div class="col">
-            Size
-        </div>
-        <div class="col">
             <p>Qty</p>
         </div>
+        <hr>
     </div>
         {% for item in cart_items %}
         <div class="row d-flex align-items-center">
@@ -37,7 +37,7 @@
                 <img class="img-fluid" src="{{ item.product.image.url }}">
             </div>
             <div class="col">
-                <p>{{ item.product.name}} <br> SKU: {{ item.product.sku|upper }} </p> 
+                <p> <strong>{{ item.product.name}}</strong> <br> SKU: {{ item.product.sku|upper }} </p> 
             </div>
             <div class="col">
                 <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
@@ -73,13 +73,14 @@
                 </form>
             </div>
         </div>
+        <hr>
         {% endfor %}
         <div class="row">
-            <div class="col">
-                <p>Subtotal: ${{ subtotal|floatformat:2 }}</p>
-                <p>Tax: ${{ tax|floatformat:2 }}</p>
-                <p>Shipping: ${{ shipping_cost|floatformat:2 }}</p>
-                <p>Total: ${{ grand_total|floatformat:2}}</p>
+            <div class="col offset-md-10">
+                <p><strong>Subtotal:</strong> ${{ subtotal|floatformat:2 }}</p>
+                <p><strong>Tax:</strong> ${{ tax|floatformat:2 }}</p>
+                <p><strong>Shipping:</strong> ${{ shipping_cost|floatformat:2 }}</p>
+                <p><strong>Total:</strong> ${{ grand_total|floatformat:2}}</p>
             </div>
         </div>
         
