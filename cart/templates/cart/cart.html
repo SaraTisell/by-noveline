@@ -94,6 +94,7 @@
 
     // Update quantity on click
     $('.update-qty-btn').click(function (e) {
+        e.preventDefault();
 
         var closestInput = $(this).closest('.input-group').find('.qty_input');
         var currentValue = parseInt($(closestInput).val());
@@ -102,17 +103,18 @@
         var decrementQty = $(this).hasClass('decrement');
 
         if (incrementQty) {
-            currentValue++;
+            newQtyValue = currentValue + 1 ;
 
         } else if (decrementQty) {
-            currentValue--;
+            newQtyValue = currentValue - 1 ;
         }
 
-        $(closestInput).val(currentValue);
+        $(closestInput).val(newQtyValue);
 
-            var form = $(this).prev('.update-qty-form');
-                form.submit();
+        var form = $(this).closest('.update-qty-form');
+            form.submit();
     })
+
     // Remove item from cart on click
     $('.remove-cart-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";

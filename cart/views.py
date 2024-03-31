@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views.generic import TemplateView
 
 
@@ -33,16 +33,16 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 def adjust_cart(request, item_id):
-
-    quantity = int(request.POST.get('quantity'))
-    size = request.POST.get('selected_size')
-    size2 = request.POST.get ('selected_size_ring_set')
     cart = request.session.get('cart', {})
+    quantity = int(request.POST.get('quantity'))
 
-    cart_key = f"{item_id}-{size}-{size2}" if size2 else f"{item_id}-{size}"
+    cart_key = f"{item_id}"
 
     if cart_key in cart:
-        cart[cart_key] = quantity
+        if quantity > 0:
+            cart[cart_key] = quantity
+        else:
+            cart.pop(cart_key)
 
     request.session['cart'] = cart
-    return redirect('cart')
+    return redirect(reverse('cart'))
