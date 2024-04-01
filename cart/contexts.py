@@ -23,6 +23,7 @@ def cart_contents(request):
             subtotal += quantity * product.price
             product_count += quantity
             cart_items.append({
+                'cart_key': cart_key,
                 'item_id': item_id,
                 'quantity': quantity,
                 'product': product,

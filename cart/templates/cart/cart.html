@@ -46,27 +46,29 @@
                 <p>${{ item.product.price }}</p>
             </div>
             <div class="col">
-                <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.cart_key %}">
                     {% csrf_token %}
                     <div class="form-group w-10">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                            <button class="decrement btn-sm update-qty-btn" data-item-id="{{ item.item_id }}" id="decrement_{{ item.item_id }}">
+                            <button class="decrement btn-sm update-qty-btn" data-item-id="{{ item.cart_key }}" id="decrement_{{ item.cart_key }}">
                                 <span>
                                     <i class="fa-solid fa-minus fa-sm"></i>
                                 </span>
                             </button>
                         </div>
-                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="9" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="9" data-cart_key="{{ item.cart_key }}" id="id_qty_{{ item.cart_key }}">
                         <div class="input-group-append">
-                            <button class="increment btn-sm update-qty-btn" data-item-id="{{ item.item_id }}" id="increment_{{ item.item_id }}">
+                            <button class="increment btn-sm update-qty-btn" data-cart_key="{{ item.cart_key }}" id="increment_{{ item.cart_key }}">
                                 <span>
                                     <i class="fa-solid fa-plus fa-sm"></i>
                                 </span>
                             </button>
-                            <span class="remove-cart-item" data-cart-key="{{ cart_key }}">
+                            <a href="#" class="remove-cart-item" data-cart-key="{{ item.cart_key }}">
+                            <span>
                                 <i class="fa-solid fa-trash"></i>
                             </span>
+                            </a>
                         </div>
                     </div>
                     </div>
@@ -102,6 +104,7 @@
         var incrementQty = $(this).hasClass('increment');
         var decrementQty = $(this).hasClass('decrement');
 
+        var newQtyValue;
         if (incrementQty) {
             newQtyValue = currentValue + 1 ;
 
@@ -112,8 +115,8 @@
         $(closestInput).val(newQtyValue);
 
         var form = $(this).closest('.update-qty-form');
-            form.submit();
-    })
+        form.submit();
+    });
 
     // Remove item from cart on click
     $('.remove-cart-item').click(function (e) {
@@ -125,10 +128,10 @@
         };
 
         $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
+        .done(function () {
+            location.reload();
+        });
 
-    })
+    });
 </script>
 {% endblock %}
