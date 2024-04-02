@@ -1,5 +1,6 @@
 from decimal import Decimal
 from django.shortcuts import get_object_or_404
+from django.conf import settings
 from products.models import Product
 
 def cart_contents(request):
@@ -7,8 +8,8 @@ def cart_contents(request):
     cart_items = []
     product_count = 0
     subtotal = 0
-    tax_rate = Decimal('0.10')
-    shipping_cost = 9
+    tax_rate = Decimal(settings.TAX_RATE)
+    shipping_cost = settings.SHIPPING_COST
     cart = request.session.get('cart', {})
 
     for cart_key, item_data in cart.items():
