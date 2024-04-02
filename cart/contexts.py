@@ -15,7 +15,7 @@ def cart_contents(request):
     for cart_key, item_data in cart.items():
         key_split = cart_key.split('-')
         item_id = key_split[0]
-        size = key_split[1]
+        size = key_split[1] if len(key_split) > 1 else None
         size2 = key_split[2] if len(key_split) > 2 else None
 
         if isinstance(item_data, dict):
