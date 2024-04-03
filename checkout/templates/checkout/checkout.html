@@ -2,6 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="row">
@@ -12,9 +16,8 @@
     </div>
     <div class="row d-flex">
         <div class="col">
-            <p>FORM</p>
             <div class="row">
-                <div class="col">
+                <div class="col div-margin-right">
                     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                         {% csrf_token %}
                         <fieldset>
@@ -42,35 +45,59 @@
                                 </label>
                                 {% endif %}
                             </div>
-
                         </fieldset>
-
+                        <fieldset>
+                            <legend>Payment</legend>
+                            <div id="card-element"></div>
+                        </fieldset>
+                        <div class="col submit-div">
+                            <a href="{% url 'cart' %}" class="adjust-cart-btn">
+                                <span>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span>Adjust Cart</span>
+                            </a>
+                            <button class="submit-payment-btn">
+                                <span>Complete Order</span>
+                                <span>
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                            </button>
+                            <p>
+                                <span>
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                </span>
+                                <span>
+                                    Your card will be charged <strong>${{ grand_total|floatformat:2}}</strong>
+                                </span>
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <p>Order Summary {{ product_count }}</p>
+        <div class="col div-margin-left">
             <div class="row d-flex">
-                <div class="col">
+                <div class="col-lg-2">
                 </div>
                 <div class="col">
-                    <p>Product Info</p>
+                    <p><strong>Product Info</strong></p>
                 </div>
                 <div class="col">
-                    <p>Price</p>
+                    <p><strong>Price</strong></p>
                 </div>
                 <hr>
             </div>
             {% for item in cart_items %}
             <div class="row d-flex">
-                <div class="col">
+                <div class="col-lg-2">
                     <img class="img-fluid" src="{{ item.product.image.url }}">
                 </div>
                 <div class="col">
-                    <p><strong>{{ item.product.name}}</strong></p>
-                    <p>Size: {{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %} </p>
-                    <p>Qty: {{ item.quantity }}</p>
+                    <p><strong>{{ item.product.name}}</strong> <br>
+                        Size: {{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %} <br>
+                        Qty: {{ item.quantity }}
+                    </p>
                 </div>
                 <div class="col">
                     <p>$ {{ item.product.price }}</p>
@@ -89,4 +116,11 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key"}}
+    {{ client_secret|json_script:"id_client_secret"}}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
