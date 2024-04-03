@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Checkout</h1>
+        </div>
+        <hr>
+    </div>
+    <div class="row d-flex">
+        <div class="col">
+            <p>FORM</p>
+            <div class="row">
+                <div class="col">
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend>Details</legend>
+                            {{ order_form.full_name | as_crispy_field }}
+                            {{ order_form.email | as_crispy_field }}
+                        </fieldset>
+                        <fieldset>
+                            <legend>Delivery</legend>
+                            {{ order_form.phone_number | as_crispy_field }}
+                            {{ order_form.country | as_crispy_field }}
+                            {{ order_form.town_or_city | as_crispy_field }}
+                            {{ order_form.zip_code | as_crispy_field }}
+                            {{ order_form.street_address1 | as_crispy_field }}
+                            {{ order_form.street_address2 | as_crispy_field }}
+                            {{ order_form.county | as_crispy_field }}
+                            <div class="form-check">
+                                {% if user.is_authenticated %}
+                                <label class="form-check-label" for="save-info">Save Delivery Info to my profile</label>
+                                <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
+                                {% else %}
+                                <label class="form-check-label" for="save-info">
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save Delivery Info
+                                </label>
+                                {% endif %}
+                            </div>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <p>Order Summary {{ product_count }}</p>
+            <div class="row d-flex">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <p>Product Info</p>
+                </div>
+                <div class="col">
+                    <p>Price</p>
+                </div>
+                <hr>
+            </div>
+            {% for item in cart_items %}
+            <div class="row d-flex">
+                <div class="col">
+                    <img class="img-fluid" src="{{ item.product.image.url }}">
+                </div>
+                <div class="col">
+                    <p><strong>{{ item.product.name}}</strong></p>
+                    <p>Size: {{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %} </p>
+                    <p>Qty: {{ item.quantity }}</p>
+                </div>
+                <div class="col">
+                    <p>$ {{ item.product.price }}</p>
+                </div>
+                <hr>
+                {% endfor %}
+                <div class="row">
+                    <div class="col offset-md-8">
+                        <p><strong>Subtotal:</strong> ${{ subtotal|floatformat:2 }}</p>
+                        <p><strong>Tax:</strong> ${{ tax|floatformat:2 }}</p>
+                        <p><strong>Shipping:</strong> ${{ shipping_cost|floatformat:2 }}</p>
+                        <p><strong>Total:</strong> ${{ grand_total|floatformat:2}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
