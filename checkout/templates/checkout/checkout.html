@@ -48,7 +48,10 @@
                         </fieldset>
                         <fieldset>
                             <legend>Payment</legend>
+                            <!-- Stripe Card Element -->
                             <div id="card-element"></div>
+                            <!-- Form Errors -->
+                            <div class="text-danger" id="stripe-card-error" role="alert"></div>
                         </fieldset>
                         <div class="col submit-div">
                             <a href="{% url 'cart' %}" class="adjust-cart-btn">
