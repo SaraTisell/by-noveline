@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Thank You</h1>
+            <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="div">
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

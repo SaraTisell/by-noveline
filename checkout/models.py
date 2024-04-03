@@ -29,7 +29,7 @@ class Order(models.Model):
 
     def update_total(self):
         """ Update grand total based on line items """
-        self.sub_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.sub_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.shipping_cost = Decimal(settings.SHIPPING_COST)
         self.tax = self.sub_total * Decimal(settings.TAX_RATE)
         self.grand_total = self.sub_total + self.tax + self.shipping_cost
