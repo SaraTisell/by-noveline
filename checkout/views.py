@@ -26,6 +26,7 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
@@ -44,13 +45,13 @@ def checkout(request):
                         order=order,
                         product=product,
                         quantity=quantity,
-                        product_size=product_size
+                        product_size=product_size,
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "Please contact us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('cart'))
