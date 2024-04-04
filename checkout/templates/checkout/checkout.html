@@ -34,14 +34,14 @@
                             {{ order_form.street_address1 | as_crispy_field }}
                             {{ order_form.street_address2 | as_crispy_field }}
                             {{ order_form.county | as_crispy_field }}
-                            <div class="form-check">
+                            <div class="form-check text-end">
                                 {% if user.is_authenticated %}
                                 <label class="form-check-label" for="save-info">Save Delivery Info to my profile</label>
                                 <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
                                 {% else %}
                                 <label class="form-check-label" for="save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save Delivery Info
+                                    <a class="chekout-links" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="chekout-links" href="{% url 'account_login' %}">login</a> to save Delivery Info
                                 </label>
                                 {% endif %}
                             </div>
@@ -60,10 +60,10 @@
                                 </span>
                                 <span>Adjust Cart</span>
                             </a>
-                            <button class="submit-payment-btn">
+                            <button class="submit-payment-btn lock-btn">
                                 <span>Complete Order</span>
                                 <span>
-                                    <i class="fa-solid fa-lock"></i>
+                                    <i class="fa-solid fa-lock btn-lock-icon"></i>
                                 </span>
                             </button>
                             <p>

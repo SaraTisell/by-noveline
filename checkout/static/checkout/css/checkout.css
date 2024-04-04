@@ -42,7 +42,6 @@
 }
 
 .submit-div i {
-    color: #993F64;
     font-size: medium;
 }
 
@@ -55,21 +54,6 @@
     text-shadow: 1px 1px 1px #b8b8b8;
 }
 
-
-
-.submit-payment-btn {
-    padding: 5px 10px;
-    font-weight: 700;
-    color: #FFFFFF;
-    background-color: #993F64;
-    border: none;
-    box-shadow: 1px 1px #7D696F;
-    text-shadow: 3px 3px 5px #3a3a3a;
-}
-
-.submit-payment-btn i {
-    color: #FFFFFF;
-}
 
 
 .div-margin-right {
@@ -110,4 +94,8 @@
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+.checkout-links {
+    color: #993F64;
 }

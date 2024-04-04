@@ -18,7 +18,7 @@
         <div class="col">
             <p>Product Info</p>
         </div>
-        <div class="col"> 
+        <div class="col">
         </div>
         <div class="col">
             <p>Size</p>
@@ -31,61 +31,97 @@
         </div>
         <hr>
     </div>
-        {% for item in cart_items %}
-        <div class="row d-flex align-items-center">
-            <div class="col">
-                <img class="img-fluid" src="{{ item.product.image.url }}">
-            </div>
-            <div class="col">
-                <p> <strong>{{ item.product.name}}</strong> <br> SKU: {{ item.product.sku|upper }} </p> 
-            </div>
-            <div class="col">
-                <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
-            </div>
-            <div class="col">
-                <p>${{ item.product.price }}</p>
-            </div>
-            <div class="col">
-                <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.cart_key %}">
-                    {% csrf_token %}
-                    <div class="form-group w-10">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <button class="decrement btn-sm update-qty-btn" data-item-id="{{ item.cart_key }}" id="decrement_{{ item.cart_key }}">
+    {% for item in cart_items %}
+    <div class="row d-flex align-items-center">
+        <div class="col">
+            <img class="img-fluid" src="{{ item.product.image.url }}">
+        </div>
+        <div class="col">
+            <p> <strong>{{ item.product.name}}</strong> <br> SKU: {{ item.product.sku|upper }} </p>
+        </div>
+        <div class="col">
+            <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
+        </div>
+        <div class="col">
+            <p>${{ item.product.price }}</p>
+        </div>
+        <div class="col">
+            <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.cart_key %}">
+                {% csrf_token %}
+                <div class="form-group w-10">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="decrement btn-sm update-qty-btn" data-item-id="{{ item.cart_key }}"
+                                id="decrement_{{ item.cart_key }}">
                                 <span>
                                     <i class="fa-solid fa-minus fa-sm"></i>
                                 </span>
                             </button>
                         </div>
-                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="9" data-cart_key="{{ item.cart_key }}" id="id_qty_{{ item.cart_key }}">
+                        <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                            value="{{ item.quantity }}" min="1" max="9" data-cart_key="{{ item.cart_key }}"
+                            id="id_qty_{{ item.cart_key }}">
                         <div class="input-group-append">
-                            <button class="increment btn-sm update-qty-btn" data-cart_key="{{ item.cart_key }}" id="increment_{{ item.cart_key }}">
+                            <button class="increment btn-sm update-qty-btn" data-cart_key="{{ item.cart_key }}"
+                                id="increment_{{ item.cart_key }}">
                                 <span>
                                     <i class="fa-solid fa-plus fa-sm"></i>
                                 </span>
                             </button>
                             <a href="#" class="remove-cart-item" data-cart-key="{{ item.cart_key }}">
-                            <span>
-                                <i class="fa-solid fa-trash"></i>
-                            </span>
+                                <span>
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
                             </a>
                         </div>
                     </div>
-                    </div>
-                </form>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    <div class="row justify-content-end">
+        <div class="col-md-6">
+            <div class="row justify-content-end">
+                <div class="col-sm-3">
+                    <p class="mb-0"><strong>Subtotal:</strong></p>
+                    <p class="mb-0"><strong>Tax:</strong></p>
+                    <p class="mb-0"><strong>Shipping:</strong></p>
+                    <p class="mb-0"><strong>Total:</strong></p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="mb-0">${{ subtotal|floatformat:2 }}</p>
+                    <p class="mb-0">${{ tax|floatformat:2 }}</p>
+                    <p class="mb-0">${{ shipping_cost|floatformat:2 }}</p>
+                    <p class="mb-0">${{ grand_total|floatformat:2}}</p>
+                </div>
             </div>
         </div>
-        <hr>
-        {% endfor %}
-        <div class="row">
-            <div class="col offset-md-10">
-                <p><strong>Subtotal:</strong> ${{ subtotal|floatformat:2 }}</p>
-                <p><strong>Tax:</strong> ${{ tax|floatformat:2 }}</p>
-                <p><strong>Shipping:</strong> ${{ shipping_cost|floatformat:2 }}</p>
-                <p><strong>Total:</strong> ${{ grand_total|floatformat:2}}</p>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col mt-4 text-end">
+            <a href="{% url 'products' %}" class="shop-more-link">
+                <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+                <span>Back to Shop</span>
+            </a>
+            <a href="{% url 'checkout' %}">
+                <button class="lock-btn">
+                    <span>Secure Checkout</span>
+                    <span>
+                        <i class="fa-solid fa-lock btn-lock-icon"></i>
+                    </span></button>
+            </a>
         </div>
-        
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col">
+            <h2>Your shopping cart is empty</h2>
+        </div>
+    </div>
     {% endif %}
 </div>
 {% endblock %}

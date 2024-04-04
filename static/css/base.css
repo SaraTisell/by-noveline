@@ -234,6 +234,36 @@ footer {
 }
 
 
+/* Secure buttons */
+
+.lock-btn {
+    padding: 5px 10px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #993F64;
+    border: none;
+    box-shadow: 1px 1px #7D696F;
+    text-shadow: 3px 3px 5px #3a3a3a;
+}
+
+.btn-lock-icon {
+    color: #FFFFFF;
+    font-size: medium;
+}
+
+
+.shop-more-link {
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: 700;
+    color: #993F64;
+    margin-right: 10px;
+    text-shadow: 1px 1px 1px #b8b8b8;
+}
+
+.shop-more-link i {
+    font-size: medium;
+}
 
 /* Screen sizes */
 @media (min-width: 576px) {
