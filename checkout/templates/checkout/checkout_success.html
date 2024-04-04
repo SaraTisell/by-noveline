@@ -11,13 +11,162 @@
     <div class="row">
         <div class="col">
             <h1>Thank You</h1>
-            <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+            <hr>
         </div>
     </div>
     <div class="row">
+        <p class="mb-0">A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+        <div class="col-sm-6 order-info-div">
+    <div class="row">
         <div class="div">
-            
+            <p class="mb-0">Order Info:</p>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Order Number</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">{{ order.order_number }}</p>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <p><strong>Order Date</strong></p>
+        </div>
+        <div class="col text-end">
+            <p>{{ order.order_date }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">Order Details:</p>
+        </div>
+        <hr>
+    </div>
+    {% for item in order.lineitems.all %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Size</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">{{ item.product_size }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Qty</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">{{ item.quantity }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p><strong>Price each</strong></p>
+        </div>
+        <div class="col text-end">
+            <p>${{ item.product.price }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">Delivery To:</p>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.full_name }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.phone_number }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.street_address1 }}</p>
+        </div>
+    </div>
+    {% if order.street_address2 %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.street_address2 }}</p>
+        </div>
+    </div>
+    {% endif %}
+    {% if order.county %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.county }}</p>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.town_or_city }}</p>
+        </div>
+    </div>
+    {% if order.zip_code %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">{{ order.zip_code }}</p>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            <p>{{ order.country }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0">Billing Info:</p>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Subtotal</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">${{ order.sub_total }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Tax</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">${{ order.tax }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Shipping</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0">${{ order.shipping_cost}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="mb-0"><strong>Total</strong></p>
+        </div>
+        <div class="col text-end">
+            <p class="mb-0"><strong>${{ order.grand_total }}</strong></p>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 {% endblock %}

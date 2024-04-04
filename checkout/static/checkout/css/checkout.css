@@ -79,3 +79,8 @@
 .div-margin-left {
     margin-left: 70px;
 }
+
+.order-info-div {
+    border: 1px solid #7D696F;
+    padding: 10px;
+}
