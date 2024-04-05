@@ -51,7 +51,9 @@
                             <!-- Stripe Card Element -->
                             <div id="card-element"></div>
                             <!-- Form Errors -->
-                            <div class="text-danger" id="stripe-card-error" role="alert"></div>
+                            <div class="text-danger" id="stripe-card-errors" role="alert"></div>
+                            <!-- Client Secret -->
+                            <input type="hidden" name="client_secret" id="client_secret" value=" {{ client_secret }}">
                         </fieldset>
                         <div class="col submit-div">
                             <a href="{% url 'cart' %}" class="adjust-cart-btn">
