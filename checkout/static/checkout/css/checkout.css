@@ -35,6 +35,15 @@
     border: 1px solid #bda5ad;
 }
 
+select,
+select option {
+    color: #000000;
+}
+select:invalid,
+select option [value=""] {
+    color: #aab7c4 !important;
+}
+
 .submit-div {
     margin: 50px 0px;
     text-align: right;
