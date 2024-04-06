@@ -1,0 +1,21 @@
+#dropdownOrderInfo {
+    color: #423838;
+}
+
+.dropdown-menu.show {
+    border: none;
+}
+
+#tab1-tab {
+    color: #993F64;
+    font-weight: 700;
+}
+
+#tab2-tab {
+    color: #993F64;
+    font-weight: 700;
+}
+
+#myTab {
+    margin-top: 20px;
+}

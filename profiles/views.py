@@ -6,7 +6,7 @@ from django.shortcuts import render
 from .models import UserProfile
 from .forms import UserDeliveryInfo
 
-from checkout.models import Order, OrderLineItem
+from checkout.models import Order
 
 
 class UserProfileView(UpdateView):
@@ -22,4 +22,10 @@ class UserProfileView(UpdateView):
         messages.success(self.request, 'Your Delivery info has been updated!')
         return super().form_valid(form)
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        profile = self.get_object()
+        orders = profile.orders.all()
+        context['orders'] = orders
+        print(orders)
+        return context
