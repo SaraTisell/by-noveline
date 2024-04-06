@@ -60,8 +60,9 @@
                             <td>${{ order.grand_total }}</td>
                         </tr>
                     </tbody>
+                    {% endfor %}
                 </table>
-            {% endfor %}
+            
         {% else %}
             <h3>You Do not have any orders</h3>
         {% endif %}

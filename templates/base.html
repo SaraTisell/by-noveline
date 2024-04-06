@@ -83,11 +83,10 @@
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <li><a class="dropdown-item" href="#">Orders</a></li>
-                <li><a class="dropdown-item" href="#">Products</a></li>
                 <li><a class="dropdown-item" href="{% url 'manage_products' %}">Product Management</a></li>
                 <li><a class="dropdown-item" href="#">Inbox</a></li>
                 {% endif %}
-                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
@@ -100,16 +99,6 @@
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'cart'%}">
                 <div class="d-flex align-items-center">
                   <div><i class="fas fa-shopping-bag"></i></div>
-                  <div>
-                    <!--
-                        <p class="my-0">
-                          {% if grand_total %}
-                              ${{ grand_total|floatformat:2 }}
-                          {% else %}
-                              $0.00
-                          {% endif %}
-                        </p> -->
-                  </div>
                 </div>
               </a>
             </li>

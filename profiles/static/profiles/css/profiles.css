@@ -4,6 +4,8 @@
 
 .dropdown-menu.show {
     border: none;
+    border-radius: 1px;
+    padding: 2px;
 }
 
 #tab1-tab {
