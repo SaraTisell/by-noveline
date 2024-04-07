@@ -17,7 +17,7 @@ class ContactMessage(models.Model):
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
-    subscribed_at = models.DateTimeField(auto_now=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.email} | {self.created_at}'
+        return f'{self.email} | {self.subscribed_at.strftime("%B %d, %Y")}'

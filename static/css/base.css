@@ -177,6 +177,22 @@ footer {
 .footer-col {
     margin: 40px 30px ;
 }
+/* Subscribe Form */
+#id_email:focus, 
+#id_email:active {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+#id_email {
+    box-sizing: border-box;
+  border: 1px solid #7D696F;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
 
 .footer-end-container {
     background-color: #993F64;

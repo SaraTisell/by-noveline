@@ -38,3 +38,13 @@ class ContactForm(forms.ModelForm):
 
         for field, label in labels.items():
             self.fields[field].label = label
+
+class SubscribeForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['email']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].widget.attrs['placeholder'] = 'Subscribe with your email!'
+        self.fields['email'].label = False

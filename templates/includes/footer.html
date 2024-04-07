@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <div class="container footer-container">
     <div class="row">
@@ -16,11 +17,13 @@
             <a href="#">FAQ</a> <br>
             <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
         </div>
-        <div class="col footer-col">
-            <h5>Shop</h5>
-        </div>
-        <div class="col text-center footer-col">
-            <h5>Subscribe</h5>
+        <div class="col text-center footer-col" id="subscribe-div">
+            <h5>Subscribe to our Newsletter!</h5>
+            <form id="subscribe-form" method="post" action="{% url 'subscribe' %}">
+                {% csrf_token %}
+                {{ subscribe_form.email | as_crispy_field }} 
+                <button type="submit" class="lock-btn subscribe-btn">Subscribe</button>
+            </form>
         </div>
     </div>
     <div class="row">

@@ -1,8 +1,9 @@
 from django.views.generic import CreateView, TemplateView
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from .models import ContactMessage
-from .forms import ContactForm
+from django.contrib.messages.views import SuccessMessageMixin
+from .models import ContactMessage, Subscriber
+from .forms import ContactForm, SubscribeForm
 
 class ContactUsView(CreateView):
     model = ContactMessage
@@ -13,3 +14,10 @@ class ContactUsView(CreateView):
 
 class ThankYouView(TemplateView):
     template_name = 'contact/thank_you.html'
+
+class SubscribeFormView(SuccessMessageMixin, CreateView):
+    model = Subscriber
+    form_class = SubscribeForm
+    template_name = 'footer.html'
+    success_url = '/'
+    success_message = "Thank you for subscribing!"
