@@ -1,0 +1,9 @@
+#id_order_number {
+    display: none;
+}
+
+.contact-form-input {
+    border-color: #7D696F;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}

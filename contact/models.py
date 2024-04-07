@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class ContactMessage(models.Model):
     name = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     regarding_an_order = models.BooleanField(default=False)
     order_number = models.CharField(max_length=35, null=True, blank=True)
     title = models.CharField(max_length=50)

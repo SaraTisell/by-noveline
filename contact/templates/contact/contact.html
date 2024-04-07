@@ -14,10 +14,38 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-12">
-
+        <div class="col">
+            <h1>Contact Us</h1>
+            <hr>
+            <p class="text-center"> Do you have any questions regarding your order, or any concerns about our products, <br>
+                 or simply want to get in touch with us? <br>
+                  Don't hesitate to get in touch, we'll get back to you as soon as possible 🌸 </p>
+            <div class="row">
+                <div class="col mt-3">
+                <form id="contact-form" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button id="submitButton" type="submit" class="lock-btn">Submit</button>
+                </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#id_regarding_an_order').change(function() {
+            if ($(this).is(':checked')) {
+                $('#id_order_number').show();
+            }
+            else {
+                $('#id_order_number').hide();
+            }
+        });
+    });
+</script>
 {% endblock %}
