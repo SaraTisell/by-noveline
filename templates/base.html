@@ -82,7 +82,7 @@
               <ul class="dropdown-menu rounded-1">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'manage_products' %}">Product Management</a></li>
                 <li><a class="dropdown-item" href="#">Inbox</a></li>
                 {% endif %}

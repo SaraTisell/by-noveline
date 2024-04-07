@@ -21,3 +21,11 @@
 #myTab {
     margin-top: 20px;
 }
+
+.order-info-container .col {
+    width: 60%;
+}
+
+.order-item-info {
+    background-color: #993F64;
+}

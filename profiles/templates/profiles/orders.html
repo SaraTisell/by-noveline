@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Orders</h1>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p class="mb-0"><strong>Order Number</strong></p>
+                </div>
+                <div class="col">
+                    <p class="mb-0"><strong>Order Date</strong></p>
+                </div>
+                <div class="col">
+                    <p class="mb-0"><strong>Full Name</strong></p>
+                </div>
+                <div class="col">
+                    <p class="mb-0"><strong>Total</strong></p>
+                </div>
+                <hr>
+            </div>
+            
+            {% if object_list %}
+            {% for order in object_list %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'order_detail' order.pk %}">
+                        <p class="mb-0"><strong>{{ order.order_number|truncatechars:9 }}</strong></p>
+                    </a>
+                </div>
+                <div class="col"><p class="mb-0">{{ order.order_date|date:"Y/m/d" }}</p></div>
+                <div class="col"><p class="mb-0">{{ order.full_name }}</p></div>
+                <div class="col"><p class="mb-0">{{ order.grand_total }}</p></div>
+                <hr>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
