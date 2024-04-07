@@ -1,0 +1,27 @@
+Hi Dear {{ order.full_name }}, Thank you for shopping at By Noveline!
+
+This is a confirmation of your order {{ order.order_number}} made {{ order.order_date}} at By Noveline.
+
+Your order information:
+{% for item in order.lineitems.all %}
+Product: {{ item.product.name}}
+Size: {{ item.product_size}}
+Quantity: {{ item.quantity}}
+Price each: ${{ item.product.price }}
+{% endfor %}
+
+Subtotal: ${{ order.sub_total }}
+Tax: ${{ order.tax|floatformat:2 }}
+Shipping: ${{ order.shipping_cost|floatformat:2 }}
+Total: ${{ order.grand_total|floatformat:2 }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+
+Sincerely,
+
+By Noveline 
