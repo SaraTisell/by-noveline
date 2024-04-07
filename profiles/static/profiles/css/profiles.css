@@ -22,10 +22,13 @@
     margin-top: 20px;
 }
 
-.order-info-container .col {
-    width: 60%;
-}
 
 .order-item-info {
     background-color: #993F64;
+    color: #FFFFFF;
+
+}
+
+.container .col {
+    padding-left: 5px;
 }

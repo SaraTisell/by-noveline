@@ -153,27 +153,28 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col order-item-info">
-                <p><strong>Order Items</strong></p>
+        <div class="row order-item-info">
+            <div class="col">
+                <p class="mb-0"><strong>Order Items</strong></p>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <p><strong>Product</strong></p>
+                <p class="mb-0"><strong>Product</strong></p>
             </div>
             <div class="col">
-                <p><strong>SKU</strong></p>
+                <p class="mb-0"><strong>SKU</strong></p>
             </div>
             <div class="col">
-                <p><strong>Size</strong></p>
+                <p class="mb-0"><strong>Size</strong></p>
             </div>
             <div class="col">
-                <p><strong>Qty</strong></p>
+                <p class="mb-0"><strong>Qty</strong></p>
             </div>
             <div class="col">
-                <p><strong>Price each</strong></p>
+                <p class="mb-0"><strong>Price each</strong></p>
             </div>
+            <hr>
         </div>
         {% for item in order.lineitems.all %}
         <div class="row">
