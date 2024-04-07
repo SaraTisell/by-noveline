@@ -13,6 +13,9 @@
         <div class="col mt-3">
             <h5>Order: <strong>{{ order.order_number }}</strong></h5>
         </div>
+        <div class="col mt-3">
+            <a href="{% url 'delete_order' order.pk %}"><strong>Delete Order</strong></a>
+        </div>
         <hr>
         <div class="container order-info-container">
         <div class="row">

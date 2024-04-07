@@ -1,5 +1,6 @@
-from django.views.generic import UpdateView, ListView, DetailView
+from django.views.generic import UpdateView, ListView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
@@ -48,6 +49,16 @@ class AdminOrdersView(UserPassesTestMixin, ListView):
 class AdminOrderDetailView(UserPassesTestMixin, DetailView):
     model = Order
     template_name = 'profiles/order_detail.html'
+
+    def test_func(self):
+        if self.request.user.is_superuser:
+            return True
+
+class AdminDeleteOrder(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+    model = Order
+    template_name = 'profiles/delete_order_confirm.html'
+    success_url = reverse_lazy('orders')
+    success_message = "The order was successfully deleted!"
 
     def test_func(self):
         if self.request.user.is_superuser:

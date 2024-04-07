@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 mx-auto text-center confirm-div">
+            <p>Are you sure you want to delete Order <br> <strong>{{ order.order_number }}</strong></p>
+            <form method="post">
+                {% csrf_token %}
+                {% if user.is_superuser %}
+                <a href="{% url 'order_detail' order.pk %}" class="shop-more-link">
+                    <span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <span>Go Back</span>
+                </a>
+                <button class="lock-btn" type="submit">Delete Order</button>
+                {% endif %}
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
