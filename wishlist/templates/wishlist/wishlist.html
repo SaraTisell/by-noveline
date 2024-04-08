@@ -23,6 +23,9 @@
                             <div class="col">
                                 <p class="card-text">${{ item.price }}</p>
                             </div>
+                            <div class="col text-end">
+                               <a href="{% url 'wishlist_item_delete' item.pk %}"><i class="fa-solid fa-trash"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,3 +37,4 @@
         </div>
     </div>
 </div>
+

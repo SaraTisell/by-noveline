@@ -92,6 +92,7 @@ TEMPLATES = [
                 'cart.contexts.cart_contents',
                 'contact.contexts.subscribe_form',
                 'wishlist.contexts.wishlist_contents',
+
             ],
         },
     },

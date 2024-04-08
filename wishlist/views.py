@@ -1,6 +1,8 @@
-from django.views.generic import ListView
-from django.shortcuts import render, redirect
+from django.views.generic import ListView, DeleteView
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from .models import WishList, WishListItem
+from django.contrib import messages
 from products.models import Product
 from django.http import HttpResponseRedirect
 
@@ -17,7 +19,15 @@ class ViewWishList(ListView):
 
 
 def add_to_wishlist(request, product_id):
+    redirect_url = request.POST.get('redirect_url')
     product = Product.objects.get(id=product_id)
     user_wishlist = WishList.objects.get_or_create(user=request.user)[0]
     user_wishlist.products.add(product)
-    return redirect('wishlist')
+
+    messages.success(request, f"{product.name} has been added to your wishlist 🩷.")
+    return redirect(redirect_url)
+
+class RemoveItemFromWishList(DeleteView):
+    model = WishListItem
+    template_name = 'wishlist/remove_item_confirm.html'
+    success_url = reverse_lazy('home')
