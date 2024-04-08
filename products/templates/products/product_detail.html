@@ -18,6 +18,11 @@
                     <p>{{ product.description }}</p>
                     <p>${{ product.price }}</p>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        {% include 'wishlist/add_to_wishlist_form.html' with product=product %}
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
