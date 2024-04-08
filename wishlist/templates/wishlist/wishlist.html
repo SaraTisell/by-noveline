@@ -8,9 +8,26 @@
     <div class="row">
         <div class="col">
             {% if wishlist_items %}
+
+            <div class="row">
                 {% for item in wishlist_items %}
-                    <li>{{ item.name }}</li>
+                <div class="col-sm-6 col-md-4 col-lg-3 custom-product-col mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'product_detail' slug=item.slug %}">
+                            <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                        </a>
+                        <div class="card-body">
+                            <div class="col mb-0">
+                                <p class="card-title"><strong>{{ item.name }}</strong></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">${{ item.price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
+            </div>
             {% else%}
             <h1>Nothing here</h1>
             {% endif %}

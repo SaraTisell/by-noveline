@@ -30,7 +30,6 @@ class UserProfileView(UpdateView):
         profile = self.get_object()
         orders = profile.orders.all()
         context['orders'] = orders
-        print(orders)
         return context
 
 class AdminOrdersView(UserPassesTestMixin, ListView):

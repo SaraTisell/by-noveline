@@ -91,6 +91,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_contents',
                 'contact.contexts.subscribe_form',
+                'wishlist.contexts.wishlist_contents',
             ],
         },
     },

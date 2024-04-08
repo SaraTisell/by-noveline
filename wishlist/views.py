@@ -11,7 +11,7 @@ class ViewWishList(ListView):
     context_object_name = 'wishlist_items'
 
     def get_queryset(self):
-        
+
         user_wishlist, created = WishList.objects.get_or_create(user=self.request.user)
         return user_wishlist.products.all()
 
