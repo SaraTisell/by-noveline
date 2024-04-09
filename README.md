@@ -167,3 +167,39 @@ The user is able to search for specific products through the search form.
 #### Color Scheme 
 
 ![color scheme](docs/readme-img/bn-color-scheme.png)
+
+### Technologies Used
+
+* HTML
+  * Website structure was developed using HTML as the main language
+* CSS
+  * Custom CSS in an external file to style the website
+* Python 
+  * Python was the main programming language for application using The Django Framework
+* Django 
+  * Django Framework was used to build this fullstack application
+* Bootstrap
+  * Boostrap Framework was used for Front-end development
+* Stripe
+  * For payments
+* GitPod
+  * Gitpod IDE was used to develope the website
+* GitHub
+  * Githud is used to host source code
+* Git
+  * Used to commit and push code from GitPod to GitHub during development of the website
+* [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
+  * Used to create privacy policy
+* [XML-Sitemaps](https://www.xml-sitemaps.com/)
+  * Used to create sitemap
+* Canva
+  * Was used to design logotype, favicon & color scheme
+  * Used to Create product images
+* Favicon.io
+  * Was used to create favicon
+* Pixelied
+  * Used to convert png to webp
+* Font Awesome
+  * Used to implement icons
+* Google Fonts
+  * Used to add fonts
