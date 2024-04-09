@@ -1,3 +1,26 @@
-# [By Noveline ] (https://by-noveline-a60b58beb7bd.herokuapp.com/)
+# [By Noveline ](https://by-noveline-a60b58beb7bd.herokuapp.com/)
 
 ![by noveline mockup](docs/readme-img/bn-mockup.png)
+
+## Table of Contents
+
+- [By Noveline](#by-noveline)
+- [UX](#ux)
+- [Agile Methodology](#agile-methodology)
+- [Entity-Relationship Diagram](#entity-relationship-diagram)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+- [Design](#design)
+  - [Logotype](#logotype)
+    - [Favicon](#favicon)
+  - [Color Scheme](#color-scheme)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+  - [Responsiveness & Performance](#responsive-&-performance)
+    - [Lighthouse Testing](#lighthouse-testing)
+  - [Code Validation](#code-validation)
+  - [Feature Testing](#feature-testing)
+- [Deployment](#deployment) 
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
