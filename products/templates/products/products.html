@@ -21,6 +21,18 @@
     <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+{% if category_name == 'gold_rings' %}
+        - Gold Rings
+    {% elif category_name == 'silver_rings' %}
+        - Silver Rings
+    {% elif category_name == 'ring_sets' %}
+        - Ring Sets
+    {% else %}
+        - Products     
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid product-container">
