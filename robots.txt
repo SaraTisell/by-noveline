@@ -1,0 +1,4 @@
+User-agebt: *
+Disallow: /accounts/
+Disallow: /cart/
+Sitemap: https://by-noveline-a60b58beb7bd.herokuapp.com/sitemap.xml
