@@ -10,7 +10,6 @@
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
 - [Features](#features)
   - [Existing Features](#existing-features)
-  - [Future Features](#future-features)
 - [Design](#design)
   - [Logotype](#logotype)
     - [Favicon](#favicon)
@@ -51,7 +50,7 @@ Full project planning can be found here:
 ### Entity-Relationship Diagram
 
 <details>
-<summary>ERD Planning stage</summary>
+<summary>ERD</summary>
 <img src="docs/readme-img/bn-erd-planning.png">
 </details>
 
@@ -94,6 +93,10 @@ Navigation meanu is visible for all users and placed in the header.
 * Customer Service
   * Contact us
   * Privacy Policy
+
+#### Favicon
+
+A favicon inspired by the logotype is implemented to imporve ux. The favicon helps the user to recognise By Novelines page inside the browser tabs.
 
 #### Home Page 
 
@@ -150,3 +153,17 @@ Four different pages is displayed at the header menu
 #### Search Function
 
 The user is able to search for specific products through the search form.
+
+### Design 
+
+#### Logotype
+
+![by noveline logotype](docs/readme-img/logo-by-noveline.webp)
+
+#### Favicon
+
+![favicon](docs/readme-img/bn-favicon.png)
+
+#### Color Scheme 
+
+![color scheme](docs/readme-img/bn-color-scheme.png)
