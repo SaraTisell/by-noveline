@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Messages</h1>
+            <hr>
+            {% if object_list %}
+            {% for contactmessage in object_list %}
+            <div class="row each-reservation">
+                <div class="col-md-12">Name: {{ contactmessage.name }}</div>
+                <div class="col-md-12">Email: {{ contactmessage.email }}</div>
+                {% if contactmessage.order_number %}
+                <div class="col-md-12">Order Number: {{ contactmessage.order_number }}</div>
+                {% endif %}
+                <div class="col-md-12">Subject: {{ contactmessage.title }}</div>
+                <div class="col-md-12">Message: {{ contactmessage.message }}</div>
+                <hr>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No messages</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
