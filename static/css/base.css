@@ -27,6 +27,9 @@
 /* Navigation */
 .navbar {
     background-color: #993F64;
+    text-shadow: 1px 1px 1px #1b1a1a;
+    box-shadow: -1px 0px 2px #222121;
+    
 }
 
 .category-link {
@@ -48,6 +51,10 @@ i {
 
 #search-form {
     border-color: #993F64;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
 }
 
 /* Offcanvas navigation for mobile*/
