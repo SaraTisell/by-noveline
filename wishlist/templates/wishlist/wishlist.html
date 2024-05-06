@@ -26,7 +26,7 @@
                             <div class="col text-end">
                                 <form action="{% url 'delete_from_wishlist' item.id %}?next={{ request.path }}" method="post">
                                     {% csrf_token %}
-                                    <button type="submit" value="Remove">
+                                    <button class="delete-btn" type="submit" value="Remove">
                                         <i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </div>
@@ -36,7 +36,8 @@
                 {% endfor %}
             </div>
             {% else%}
-            <h1>Nothing here</h1>
+            <h1>There is no products in your wishlist yet</h1>
+            <p>Explore our <a href="{% url 'products' %}">Beautiful Rings</a> now and save some for later!</p>
             {% endif %}
         </div>
     </div>

@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from .models import WishList, WishListItem
@@ -36,5 +36,6 @@ def delete_from_wishlist(request, product_id):
     if product in user_wishlist.products.all():
         user_wishlist.products.remove(product)
 
+        messages.success(request, f"{product.name} has been removed from your wishlist.")
         redirect_url = request.GET.get('next', '/')
         return redirect(redirect_url)

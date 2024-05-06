@@ -8,19 +8,21 @@
     width: 50px;
 }
 
+.delete-btn {
+    border: none;
+    background-color: #ffffff;
+}
+
 .card {
     margin: 5%;
     border: 2px solid #993f64;
     border-radius: 0;
-    box-shadow: 1px 1px #7d696f;
-
-    
+    box-shadow: 1px 1px #7d696f; 
 }
 
 .card-body {
     padding: 0px 5px 10px 5px;
     font-size: 15px;
-
 }
 
 .add-button {
@@ -34,7 +36,6 @@
 .add-button:hover {
     background-color: pink;
 }
-
 
 .product-title {
     font-family: "Alex Brush", sans-serif;
@@ -58,15 +59,11 @@
         flex: 0 0 auto;
         width: 50%;
     }
-
-    
 }
-
 
 @media (min-width: 769px) {
     .product-container {
-        width: 70%;
-        
+        width: 70%; 
     }
     
     .detail-div {
