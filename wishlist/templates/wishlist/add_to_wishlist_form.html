@@ -6,6 +6,6 @@
 
 <form id="wish-list-form" action="{% url 'add_to_wishlist' product_id=product.id %}" method="post">
     {% csrf_token %}
-    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+    <input type="hidden" name="redirect_url" value="{% if category_name %}{% url 'products' %}?category={{ category_name }}{% else %}{% url 'products' %}{% endif %}">
     <button class="wishlist-btn" type="submit" aria-label="Add to wishlist">🩷</button>
 </form>

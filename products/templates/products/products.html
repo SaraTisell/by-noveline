@@ -75,6 +75,15 @@
                     <div class="col">
                         <p class="card-text">${{ product.price }}</p>
                     </div>
+                    <div class="col">
+                        {% if user.is_authenticated %}
+                <div class="row">
+                    <div class="col">
+                        {% include 'wishlist/add_to_wishlist_form.html' with product=product %}
+                    </div>
+                </div>
+                {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
