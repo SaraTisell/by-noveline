@@ -24,7 +24,11 @@
                                 <p class="card-text">${{ item.price }}</p>
                             </div>
                             <div class="col text-end">
-                               <a href="{% url 'wishlist_item_delete' item.pk %}"><i class="fa-solid fa-trash"></i></a>
+                                <form action="{% url 'delete_from_wishlist' item.id %}?next={{ request.path }}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" value="Remove">
+                                        <i class="fa-solid fa-trash"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>

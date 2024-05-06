@@ -27,7 +27,14 @@ def add_to_wishlist(request, product_id):
     messages.success(request, f"{product.name} has been added to your wishlist 🩷.")
     return redirect(redirect_url)
 
-class RemoveItemFromWishList(DeleteView):
-    model = WishListItem
-    template_name = 'wishlist/remove_item_confirm.html'
-    success_url = reverse_lazy('home')
+def delete_from_wishlist(request, product_id):
+    """ View to delete an item from the wishlist """
+
+    user_wishlist = get_object_or_404(WishList, user=request.user)
+    product = get_object_or_404(Product, id=product_id)
+
+    if product in user_wishlist.products.all():
+        user_wishlist.products.remove(product)
+
+        redirect_url = request.GET.get('next', '/')
+        return redirect(redirect_url)
