@@ -19,5 +19,19 @@
     </div>
     </div>
 </div>
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h2>News</h2>
+            {% for product in latest_products %}
+                {{ product.name }}
+                {{ product.price }}
+                {{ product.id }}
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
 
 {% endblock %}
