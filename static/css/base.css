@@ -139,6 +139,24 @@ main {
     background-color: #993F64;
 }
 
+.carousel-caption {
+    background-color: rgb(125, 105, 111, 0.5);
+}
+
+.news-banner {
+    background-image: url('../images/bn-sparkling-banner.webp');
+}
+
+.news-banner h3 {
+    color: #FFFFFF;
+    font-weight: bolder;
+}
+
+.news-banner a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 300;
+}
 /* Footer */
 
 footer {
