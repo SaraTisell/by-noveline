@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css%}
-    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
 {% endblock %}
 
 {% block extra_title %}- Shopping Cart{% endblock %}
@@ -16,38 +16,19 @@
         <hr>
     </div>
     {% if cart_items %}
-    <div class="row d-flex align-items-center">
-        <div class="col">
-            <p>Product Info</p>
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-            <p>Size</p>
-        </div>
-        <div class="col">
-            <p>Price</p>
-        </div>
-        <div class="col">
-            <p>Qty</p>
-        </div>
-        <hr>
-    </div>
     {% for item in cart_items %}
     <div class="row d-flex align-items-center">
-        <div class="col">
+        <div class="col-3 col-md-3">
             <img class="img-fluid" src="{{ item.product.image.url }}">
         </div>
-        <div class="col">
-            <p> <strong>{{ item.product.name}}</strong> <br> SKU: {{ item.product.sku|upper }} </p>
+        <div class="col-9 col-md-6">
+            <p class="mb-0"> <strong>{{ item.product.name}}</strong> <br> SKU: {{ item.product.sku|upper }}</p>
+            <p class="mb-0">Size: {{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}
+            </p>
+            <p class="mb-0">Price: ${{ item.product.price }}</p>
         </div>
-        <div class="col">
-            <p>{{ item.size }} {% if item.product.size_ring_sets %} | {{ item.size2 }} {% endif %}</p>
-        </div>
-        <div class="col">
-            <p>${{ item.product.price }}</p>
-        </div>
-        <div class="col">
+
+        <div class="col-4 col-md-3 ">
             <form class="form update-qty-form" method="POST" action="{% url 'adjust_cart' item.cart_key %}">
                 {% csrf_token %}
                 <div class="form-group w-10">
@@ -79,20 +60,21 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
     <hr>
     {% endfor %}
     <div class="row justify-content-end">
-        <div class="col-md-6">
+        <div class="col-6 col-md-2">
             <div class="row justify-content-end">
-                <div class="col-sm-3">
+                <div class="col">
                     <p class="mb-0"><strong>Subtotal:</strong></p>
                     <p class="mb-0"><strong>Tax:</strong></p>
                     <p class="mb-0"><strong>Shipping:</strong></p>
                     <p class="mb-0"><strong>Total:</strong></p>
                 </div>
-                <div class="col-sm-2">
+                <div class="col">
                     <p class="mb-0">${{ subtotal|floatformat:2 }}</p>
                     <p class="mb-0">${{ tax|floatformat:2 }}</p>
                     <p class="mb-0">${{ shipping_cost|floatformat:2 }}</p>
@@ -131,7 +113,6 @@
 {% block postloadjs %}
 
 <script type="text/javascript">
-
     // Update quantity on click
     $('.update-qty-btn').click(function (e) {
         e.preventDefault();
@@ -144,10 +125,10 @@
 
         var newQtyValue;
         if (incrementQty) {
-            newQtyValue = currentValue + 1 ;
+            newQtyValue = currentValue + 1;
 
         } else if (decrementQty) {
-            newQtyValue = currentValue - 1 ;
+            newQtyValue = currentValue - 1;
         }
 
         $(closestInput).val(newQtyValue);
@@ -166,9 +147,9 @@
         };
 
         $.post(url, data)
-        .done(function () {
-            location.reload();
-        });
+            .done(function () {
+                location.reload();
+            });
 
     });
 </script>
