@@ -150,12 +150,14 @@ main {
 .news-banner h3 {
     color: #FFFFFF;
     font-weight: bolder;
+    text-shadow: 4px 2px 4px #993F64;
 }
 
 .news-banner a {
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 300;
+    text-shadow: 4px 2px 4px #993F64;
 }
 /* Footer */
 
