@@ -14,7 +14,8 @@ class ViewWishList(ListView):
 
     def get_queryset(self):
 
-        user_wishlist, created = WishList.objects.get_or_create(user=self.request.user)
+        user_wishlist, created = WishList.objects.get_or_create(
+                user=self.request.user)
         return user_wishlist.products.all()
 
 
@@ -24,8 +25,10 @@ def add_to_wishlist(request, product_id):
     user_wishlist = WishList.objects.get_or_create(user=request.user)[0]
     user_wishlist.products.add(product)
 
-    messages.success(request, f"{product.name} has been added to your wishlist 🩷.")
+    messages.success(
+        request, f"{product.name} has been added to your wishlist 🩷.")
     return redirect(redirect_url)
+
 
 def delete_from_wishlist(request, product_id):
     """ View to delete an item from the wishlist """
@@ -36,6 +39,7 @@ def delete_from_wishlist(request, product_id):
     if product in user_wishlist.products.all():
         user_wishlist.products.remove(product)
 
-        messages.success(request, f"{product.name} has been removed from your wishlist.")
+        messages.success(
+            request, f"{product.name} has been removed from your wishlist.")
         redirect_url = request.GET.get('next', '/')
         return redirect(redirect_url)
