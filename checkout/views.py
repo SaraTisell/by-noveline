@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -10,6 +11,7 @@ from profiles.forms import UserDeliveryInfo
 from cart.contexts import cart_contents
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -26,7 +28,6 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now, Please try again later.')
         return HttpResponse(content=e, status=400)
-
 
 
 def checkout(request):
@@ -58,8 +59,12 @@ def checkout(request):
             for cart_key, item_data in cart.items():
                 try:
                     product = Product.objects.get(id=cart_key.split('-')[0])
-                    size = cart_key.split('-')[1] if len(cart_key.split('-')) > 1 else None
-                    size2 = cart_key.split('-')[2] if len(cart_key.split('-')) > 2 else None
+                    size = (
+                            cart_key.split('-')[1] if len(cart_key.split('-'))
+                            > 1 else None)
+                    size2 = (
+                             cart_key.split('-')[2] if len(cart_key.split('-'))
+                             > 2 else None)
                     quantity = item_data['quantity']
 
                     product_size = size
@@ -75,14 +80,16 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your shopping cart\
+                        wasn't found in our database. "
                         "Please contact us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -91,7 +98,6 @@ def checkout(request):
         if not cart:
             messages.error(request, "You have nothing in your cart yet")
             return redirect(reverse('products'))
-
 
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
@@ -134,6 +140,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
@@ -157,7 +164,8 @@ def checkout_success(request, order_number):
                 'default_country': order.country,
                 'default_county': order.county,
             }
-            user_delivery_info = UserDeliveryInfo(profile_data, instance=profile)
+            user_delivery_info = UserDeliveryInfo(profile_data,
+                                                  instance=profile)
             if user_delivery_info.is_valid():
                 user_delivery_info.save()
 
