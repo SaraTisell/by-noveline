@@ -203,3 +203,38 @@ The user is able to search for specific products through the search form.
   * Used to implement icons
 * Google Fonts
   * Used to add fonts
+
+
+### Deployment
+
+The project By Noveline was hosted on GitHub and deployed on Heroku by these steps
+
+* Make your code repo ready for deployment
+  * Set DEBUG = False
+  * Commit and push code to GitHub
+* Navigate to Heroku and login
+  * From Heroku dashboard, create a new app
+   * Select region
+   * Giv you app a unique name
+* Navigate to settings tab and click reveal config vars. __Add Following config vars:__
+  * *For Security & Authentication*
+    * SECRET_KEY
+  * *For Database*
+    * DATABASE_URL
+  * *For Stripe*
+    * STRIPE_PUBLIC_KEY
+    * STRIPE_SECRET_KEY
+    * STRIPE_WH_SECRET
+  * *For AWS*
+    * AWS_ACCESS_KEY_ID
+    * AWS_SECRET_ACCESS_KEY
+    * USE_AWS
+  * *For EMAIL*
+    * EMAIL_HOST_PASS
+    * EMAIL_HOST_USER
+* Click on deploy tab and connect to github
+  * Search for repo and click on the one you want to deploy
+  * Scroll down to manual deploy
+  * Select (main) branch
+  * Click Deploy Branch
+* Open app to view the live site
