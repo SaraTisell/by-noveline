@@ -32,6 +32,7 @@ class UserProfileView(UpdateView):
         context['orders'] = orders
         return context
 
+
 class AdminOrdersView(UserPassesTestMixin, ListView):
     model = Order
     template_name = 'profiles/orders.html'
@@ -45,6 +46,7 @@ class AdminOrdersView(UserPassesTestMixin, ListView):
         if self.request.user.is_superuser:
             return True
 
+
 class AdminOrderDetailView(UserPassesTestMixin, DetailView):
     model = Order
     template_name = 'profiles/order_detail.html'
@@ -52,6 +54,7 @@ class AdminOrderDetailView(UserPassesTestMixin, DetailView):
     def test_func(self):
         if self.request.user.is_superuser:
             return True
+
 
 class AdminDeleteOrder(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Order
