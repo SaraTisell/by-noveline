@@ -8,7 +8,9 @@ def index(request):
     """
     latest_products = Product.objects.order_by('-id')[:4]
 
-    return render(request, 'home/index.html', {'latest_products': latest_products})
+    return render(
+        request, 'home/index.html', {'latest_products': latest_products})
+
 
 def privacy_policy(request):
     """ View to render privacy policy """
