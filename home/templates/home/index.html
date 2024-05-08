@@ -2,92 +2,98 @@
 {% load static %}
 
 {% block extra_meta %}
-    <meta name="description" content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
-    <meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
+<meta name="description"
+  content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
+<meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
 {% endblock %}
 
 {% block content %}
 <div class="container home-banner">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-left banner-heading">Wedding Season</h2>
+    </div>
     <div class="row">
-        <div class="col-12">
-            <h2 class="text-left banner-heading">Wedding Season</h2>
-        </div>
-        <div class="row">
-        <div class="col-12 shop-btn-div">
-            <a class="shop-btn" href="{% url 'products' %}">Shop Now</a>
-        </div>
+      <div class="col-12 shop-btn-div">
+        <a class="shop-btn" href="{% url 'products' %}">Shop Now</a>
+      </div>
     </div>
-    </div>
+  </div>
 </div>
 <div class="container mt-3">
-    <div class="row text-center">
-        <div class="col news-banner">
-        <h3>Sparkling News</h3>
+  <div class="row text-center">
+    <div class="col news-banner">
+      <h3>Sparkling News</h3>
+    </div>
+    <div class="row">
+      {% for product in latest_products %}
+      <div class="col-6 col-sm-3">
+        <div class="row text-center">
+          <a href="{% url 'product_detail' product.slug %}">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"
+              style="width: 70%; height: auto;">
+          </a>
         </div>
         <div class="row">
-            {% for product in latest_products %}
-            <div class="col-6 col-sm-3">
-                <div class="row text-center">
-                    <a href="{% url 'product_detail' product.slug %}">
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="width: 70%; height: auto;">
-                    </a>
-                </div>
-                <div class="row">
-                    <h6 class="mb-0"><strong>{{ product.name }}</strong></h6>
-                </div>
-                <div class="row">
-                    <p>${{ product.price }}</p>
-                </div>
-            </div>
-            {% endfor %}
+          <h6 class="mb-0"><strong>{{ product.name }}</strong></h6>
         </div>
+        <div class="row">
+          <p>${{ product.price }}</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-    <div class="col news-banner text-center">
-        <a href="{% url 'products' %}">Explore All Products</a>
-    </div>
+  </div>
+  <div class="col news-banner text-center">
+    <a href="{% url 'products' %}">Explore All Products</a>
+  </div>
 
 </div>
 
 <div class="container mt-3">
-    <div class="col col-md-8 mx-auto">
+  <div class="col col-md-8 mx-auto">
     <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a class="nav-link category-link" href="{% url 'products' %}?category=gold_rings">
-            <img src="{% static 'images/by-noveline-gold-rings.webp' %}" class="d-block w-100" alt="Gold Rings Category">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a class="nav-link category-link" href="{% url 'products' %}?category=gold_rings">
+            <img src="{% static 'images/by-noveline-gold-rings.webp' %}" class="d-block w-100"
+              alt="Gold Rings Category">
             <div class="carousel-caption">
               <p>Explore our beautiful rings made of 18k gold</p>
             </div>
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a class="nav-link category-link" href="{% url 'products' %}?category=silver_rings">
-            <img src="{% static 'images/by-noveline-silver-rings.webp' %}" class="d-block w-100" alt="Silver Rings Category">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a class="nav-link category-link" href="{% url 'products' %}?category=silver_rings">
+            <img src="{% static 'images/by-noveline-silver-rings.webp' %}" class="d-block w-100"
+              alt="Silver Rings Category">
             <div class="carousel-caption">
               <p>Our lavish silver rings made of the finest sterling silver</p>
             </div>
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a class="nav-link category-link" href="{% url 'products' %}?category=ring_sets">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a class="nav-link category-link" href="{% url 'products' %}?category=ring_sets">
             <img src="{% static 'images/by-noveline-ring-sets.webp' %}" class="d-block w-100" alt="Ring Sets Category">
             <div class="carousel-caption">
               <p>See our amazing ring sets for your special moment</p>
             </div>
-          </div>
-        </a>
+          </a>
         </div>
-        <button class="carousel-control-prev ms-1" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next me-1" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+      <button class="carousel-control-prev ms-1" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next me-1" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <hr>
+  </div>
+  <hr>
 </div>
 <div class="container">
   <div class="row text-center">
@@ -106,7 +112,7 @@
       </div>
     </div>
     <div class="col-3">
-        <span><i class="fa-solid fa-gift"></i></span>
+      <span><i class="fa-solid fa-gift"></i></span>
       <div class="row">
         <p>Delivered in a beautiful ring box</p>
       </div>
