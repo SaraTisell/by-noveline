@@ -44,16 +44,16 @@
                             {% include 'wishlist/add_to_wishlist_form.html' with product=product %}
                         </div>
                     </div>
-                {% endif %}
-                </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endfor %}
-            {% else %}
-            <h3>Sorry, no products matches '{{ search_term }}'</h3>
-            {% endif %}
         </div>
+        {% endfor %}
+        {% else %}
+        <h3>Sorry, no products matches '{{ search_term }}'</h3>
+        {% endif %}
     </div>
+</div>
 
 
-    {% endblock %}
+{% endblock %}

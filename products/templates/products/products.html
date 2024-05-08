@@ -2,35 +2,38 @@
 {% load static %}
 
 {% block extra_meta %}
-    {% if category_name == 'gold_rings' %}
-        <meta name="description" content="By Noveline's beautiful gold rings collection.">
-        <meta name="keywords" content="by noveline, 1 carat diamond ring, gold rings for women, gold rings for men, white gold, rose gold"> 
-    {% elif category_name == 'silver_rings' %}
-        <meta name="description" content="By Noveline's beautiful silver rings collection, made of sterling silver.">
-        <meta name="keywords" content="by noveline, diamond ring, silver rings, sterling silver rings, 1 carat diamond ring"> 
-    {% elif category_name == 'ring_sets' %}
-        <meta name="description" content="By Noveline's collection of ring sets. beautiful rings for engagements and weddings.">
-        <meta name="keywords" content="by noveline, wedding ring sets, engagement rings, gold ring sets, diamond ring">
-    {% else %}
-        <meta name="description" content="Beautiful wedding rings, engagement rings and diamond rings made on request By Noveline.">
-        <meta name="keywords" content="by noveline, diamond ring, gold ring, sterling silver rings, wedding ring sets, engagement rings">      
-    {% endif %}
+{% if category_name == 'gold_rings' %}
+<meta name="description" content="By Noveline's beautiful gold rings collection.">
+<meta name="keywords"
+    content="by noveline, 1 carat diamond ring, gold rings for women, gold rings for men, white gold, rose gold">
+{% elif category_name == 'silver_rings' %}
+<meta name="description" content="By Noveline's beautiful silver rings collection, made of sterling silver.">
+<meta name="keywords" content="by noveline, diamond ring, silver rings, sterling silver rings, 1 carat diamond ring">
+{% elif category_name == 'ring_sets' %}
+<meta name="description" content="By Noveline's collection of ring sets. beautiful rings for engagements and weddings.">
+<meta name="keywords" content="by noveline, wedding ring sets, engagement rings, gold ring sets, diamond ring">
+{% else %}
+<meta name="description"
+    content="Beautiful wedding rings, engagement rings and diamond rings made on request By Noveline.">
+<meta name="keywords"
+    content="by noveline, diamond ring, gold ring, sterling silver rings, wedding ring sets, engagement rings">
+{% endif %}
 {% endblock %}
 
 {% block extra_css%}
-    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
 {% block extra_title %}
 {% if category_name == 'gold_rings' %}
-        - Gold Rings
-    {% elif category_name == 'silver_rings' %}
-        - Silver Rings
-    {% elif category_name == 'ring_sets' %}
-        - Ring Sets
-    {% else %}
-        - Products     
-    {% endif %}
+- Gold Rings
+{% elif category_name == 'silver_rings' %}
+- Silver Rings
+{% elif category_name == 'ring_sets' %}
+- Ring Sets
+{% else %}
+- Products
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -68,7 +71,8 @@
                         <p class="card-title"><strong>{{ product.name }}</strong></p>
                     </div>
                     <div class="col m-0">
-                        <a href="{% url 'products' %}?category={{ product.category.name }}" style="color: #423838; text-decoration: none;">
+                        <a href="{% url 'products' %}?category={{ product.category.name }}"
+                            style="color: #423838; text-decoration: none;">
                             {{ product.category.friendly_name }}
                         </a>
                     </div>
@@ -77,12 +81,12 @@
                     </div>
                     <div class="col">
                         {% if user.is_authenticated %}
-                <div class="row">
-                    <div class="col">
-                        {% include 'wishlist/add_to_wishlist_form.html' with product=product %}
-                    </div>
-                </div>
-                {% endif %}
+                        <div class="row">
+                            <div class="col">
+                                {% include 'wishlist/add_to_wishlist_form.html' with product=product %}
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -90,6 +94,5 @@
         {% endfor %}
     </div>
 </div>
-
 
 {% endblock %}

@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block extra_css%}
-    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
 {% block extra_meta %}
-    <meta name="description" content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
-    <meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
+<meta name="description"
+    content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
+<meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
 {% endblock %}
 
 {% block extra_title %}- {{ product.name }}{% endblock %}
@@ -38,7 +39,7 @@
                     <div class="form-row">
                         <div class="col">
                             <p class="mt-3"><strong>Select Size:</strong></p>
-                            <select class="form-select-sm" name="selected_size" aria-label="select size" required>
+                            <select class="form-select-sm" name="selected_size" aria-label="select size">
                                 <option value="15.0">15.0</option>
                                 <option value="15.5">15.5</option>
                                 <option value="16.0">16.0</option>
@@ -56,9 +57,9 @@
                                 <option value="22.0">22.0</option>
                                 <option value="22.5">22.5</option>
                             </select>
-                        {% if product.size_ring_sets %}
+                            {% if product.size_ring_sets %}
                             <select class="form-select-sm" name="selected_size_ring_set"
-                                aria-label="select size for ring sets" required>
+                                aria-label="select size for ring sets">
                                 <option value="15.0">15.0</option>
                                 <option value="15.5">15.5</option>
                                 <option value="16.0">16.0</option>
