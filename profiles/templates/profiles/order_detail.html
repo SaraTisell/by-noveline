@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
+{% block extra_meta %}
+    <meta name="description" content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
+    <meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
+{% endblock %}
+
 {% block content %}
 {% if request.user.is_superuser %}
 <div class="container">
