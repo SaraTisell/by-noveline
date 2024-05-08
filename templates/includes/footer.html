@@ -20,7 +20,7 @@
             <h5>Subscribe to our Newsletter!</h5>
             <form id="subscribe-form" method="post" action="{% url 'subscribe' %}">
                 {% csrf_token %}
-                {{ subscribe_form.email | as_crispy_field }} 
+                {{ subscribe_form.email | as_crispy_field }}
                 <button type="submit" class="lock-btn subscribe-btn">Subscribe</button>
             </form>
         </div>
@@ -33,7 +33,7 @@
                 <li class="list-inline-item">
                     <a href="https://www.facebook.com" target="_blank" rel="noopener"
                         aria-label="Visit our Facebook page (opens in a new tab)"><i
-                            class="fa-brands fa-square-facebook"></i></i></a>
+                            class="fa-brands fa-square-facebook"></i></a>
                 </li>
                 <li class="list-inline-item">
                     <a href="https://www.instagram.com" target="_blank" rel="noopener"
@@ -58,7 +58,7 @@
         <div class="col d-flex justify-content-end">
             <p>Created by Sara Tisell
                 <a href="https://github.com/SaraTisell/by-noveline" target="_blank" rel="noopener"
-                    aria-label="Link to Sara Tisells' Github"><i class="fa-brands fa-github"></i></a>
+                    aria-label="Link to Sara Tisells' Github (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
             </p>
         </div>
     </div>
