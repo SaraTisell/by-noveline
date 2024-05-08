@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.conf import settings
 from products.models import Product
 
+
 def cart_contents(request):
 
     cart_items = []
@@ -30,12 +31,10 @@ def cart_contents(request):
                 'product': product,
                 'size': size,
                 'size2': size2,
-            })   
+            })
 
     tax = subtotal * tax_rate
     grand_total = shipping_cost + subtotal + tax
-
-
 
     context = {
         'cart_items': cart_items,
