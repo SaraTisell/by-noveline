@@ -1,5 +1,6 @@
 from .models import WishList, WishListItem
 
+
 def wishlist_contents(request):
     wishlist = None
     wishlist_items = None
