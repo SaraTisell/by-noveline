@@ -6,6 +6,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import ContactMessage, Subscriber
 from .forms import ContactForm, SubscribeForm
 
+
 class ContactUsView(CreateView):
     model = ContactMessage
     form_class = ContactForm
@@ -16,6 +17,7 @@ class ContactUsView(CreateView):
 class ThankYouView(TemplateView):
     template_name = 'contact/thank_you.html'
 
+
 class SubscribeFormView(SuccessMessageMixin, CreateView):
     model = Subscriber
     form_class = SubscribeForm
@@ -23,8 +25,9 @@ class SubscribeFormView(SuccessMessageMixin, CreateView):
     success_url = '/'
     success_message = "Thank you for subscribing!"
 
+
 class InboxView(UserPassesTestMixin, ListView):
-  
+
     model = ContactMessage
     template_name = 'contact/inbox.html'
     get_success_url = reverse_lazy('inbox')

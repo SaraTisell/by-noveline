@@ -1,6 +1,7 @@
 from django import forms
 from .models import ContactMessage, Subscriber
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
@@ -11,8 +12,7 @@ class ContactForm(forms.ModelForm):
             'order_number',
             'title',
             'message',
-    ]
-
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -25,7 +25,7 @@ class ContactForm(forms.ModelForm):
         }
 
         labels = {
-        'regarding_an_order': 'Does your question apply to an order?'
+         'regarding_an_order': 'Does your question apply to an order?'
         }
 
         for field, placeholder in placeholders.items():
@@ -39,6 +39,7 @@ class ContactForm(forms.ModelForm):
         for field, label in labels.items():
             self.fields[field].label = label
 
+
 class SubscribeForm(forms.ModelForm):
     class Meta:
         model = Subscriber
@@ -46,5 +47,5 @@ class SubscribeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].widget.attrs['placeholder'] = 'Subscribe with your email!'
+        self.fields['email'].widget.attrs['placeholder'] = 'Your Email'
         self.fields['email'].label = False

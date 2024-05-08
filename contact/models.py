@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class ContactMessage(models.Model):
     name = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
     email = models.EmailField()
     regarding_an_order = models.BooleanField(default=False)
     order_number = models.CharField(max_length=35, null=True, blank=True)
@@ -14,6 +16,7 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f'Message from {self.name} | {self.title} | {self.created_at}'
+
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
