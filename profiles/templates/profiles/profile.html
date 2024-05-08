@@ -3,12 +3,13 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
 {% block extra_meta %}
-    <meta name="description" content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
-    <meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
+<meta name="description"
+  content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
+<meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
 {% endblock %}
 
 {% block extra_title %}- My Profile{% endblock %}
@@ -16,77 +17,81 @@
 {% block content %}
 
 <div class="container">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Wishlist 🩷</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Order History</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Personal Info</a>
-        </li>
-      </ul>
-      
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-          {% include 'wishlist/wishlist.html' %}
-      </div>
-        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-        {% if orders %}
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Order Number</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    {% for order in orders %}
-                    <tbody>
-                        <tr>
-                            <td>{{ order.order_number|truncatechars:9}} <br>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" role="tooltip" id="dropdownOrderInfo" data-bs-toggle="dropdown" aria-expanded="false">More Info</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownOrderInfo" id="order-info-list">
-                                      <li>
-                                        <p class="mb-0">Full Order Number: <br> <strong>{{ order.order_number}}</strong></p>
-                                      </li class="mb-0">
-                                      {% for item in order.lineitems.all %}
-                                      <li>
-                                        <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
-                                      </li>
-                                      <li>
-                                        <p class="mb-0">Size: {{ item.product_size }}</p>
-                                      </li>
-                                      <li>
-                                        <p class="mb-0">Qty: {{ item.quantity }}</p>
-                                      </li>
-                                      <li>
-                                        <p class="mb-0">${{ item.product.price }} each</p>
-                                      </li>
-                                      {% endfor %}
-                                    </ul>
-                                  </div> 
-                            </td>
-                            <td>{{ order.order_date|date:"Y/m/d" }}</td>
-                            <td>${{ order.grand_total }}</td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            
-        {% else %}
-            <h3>You Do not have any orders</h3>
-        {% endif %}
-        </div>
-        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
-            </form>
-        </div>
-      </div>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1"
+        aria-selected="true">Wishlist 🩷</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2"
+        aria-selected="false">Order History</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3"
+        aria-selected="false">Personal Info</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+      {% include 'wishlist/wishlist.html' %}
+    </div>
+    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+      {% if orders %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Order Number</th>
+            <th>Date</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        {% for order in orders %}
+        <tbody>
+          <tr>
+            <td>{{ order.order_number|truncatechars:9}} <br>
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" role="tooltip" id="dropdownOrderInfo" data-bs-toggle="dropdown"
+                  aria-expanded="false">More Info</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownOrderInfo" id="order-info-list">
+                  <li>
+                    <p class="mb-0">Full Order Number: <br> <strong>{{ order.order_number}}</strong></p>
+                  </li class="mb-0">
+                  {% for item in order.lineitems.all %}
+                  <li>
+                    <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
+                  </li>
+                  <li>
+                    <p class="mb-0">Size: {{ item.product_size }}</p>
+                  </li>
+                  <li>
+                    <p class="mb-0">Qty: {{ item.quantity }}</p>
+                  </li>
+                  <li>
+                    <p class="mb-0">${{ item.product.price }} each</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </td>
+            <td>{{ order.order_date|date:"Y/m/d" }}</td>
+            <td>${{ order.grand_total }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+
+      {% else %}
+      <h3>You Do not have any orders</h3>
+      {% endif %}
+    </div>
+    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+      <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock %}
