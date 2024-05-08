@@ -63,14 +63,8 @@ select option [value=""] {
     text-shadow: 1px 1px 1px #b8b8b8;
 }
 
-
-
 .div-margin-right {
     margin-right: 10px;
-}
-
-.div-margin-left {
-    margin-left: 70px;
 }
 
 .order-info-div {

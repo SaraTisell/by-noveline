@@ -3,12 +3,13 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block extra_meta %}
-    <meta name="description" content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
-    <meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
+<meta name="description"
+    content="Beautiful, high-quality wedding and engagements rings By Noveline. Made on request for you to your special day.">
+<meta name="keywords" content="by noveline, engagement rings, wedding rings, gold, silver, diamond rings">
 {% endblock %}
 
 {% block extra_title %}- Checkout{% endblock %}
@@ -22,7 +23,7 @@
         <hr>
     </div>
     <div class="row d-flex">
-        <div class="col">
+        <div class="col-12 col-md-6 order last">
             <div class="row">
                 <div class="col div-margin-right">
                     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -47,8 +48,9 @@
                                 <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
                                 {% else %}
                                 <label class="form-check-label" for="save-info">
-                                    <a class="chekout-links" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="chekout-links" href="{% url 'account_login' %}">login</a> to save Delivery Info
+                                    <a class="chekout-links" href="{% url 'account_signup' %}">Create an account</a> or
+                                    <a class="chekout-links" href="{% url 'account_login' %}">login</a> to save Delivery
+                                    Info
                                 </label>
                                 {% endif %}
                             </div>
@@ -88,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <div class="col div-margin-left">
+        <div class="col order-first me-5">
             <div class="row d-flex">
                 <div class="col-lg-2">
                 </div>
@@ -103,7 +105,7 @@
             {% for item in cart_items %}
             <div class="row d-flex">
                 <div class="col-lg-2">
-                    <img class="img-fluid" src="{{ item.product.image.url }}">
+                    <img class="img-fluid" src="{{ item.product.image.url }}" style="width: 65%;">
                 </div>
                 <div class="col">
                     <p><strong>{{ item.product.name}}</strong> <br>
@@ -117,7 +119,7 @@
                 <hr>
                 {% endfor %}
                 <div class="row">
-                    <div class="col offset-md-8">
+                    <div class="col">
                         <p><strong>Subtotal:</strong> ${{ subtotal|floatformat:2 }}</p>
                         <p><strong>Tax:</strong> ${{ tax|floatformat:2 }}</p>
                         <p><strong>Shipping:</strong> ${{ shipping_cost|floatformat:2 }}</p>
@@ -145,8 +147,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key"}}
-    {{ client_secret|json_script:"id_client_secret"}}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key"}}
+{{ client_secret|json_script:"id_client_secret"}}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
