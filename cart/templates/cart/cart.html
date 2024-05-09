@@ -116,7 +116,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-
+{{ block.super }}
 <script type="text/javascript">
     // Update quantity on click
     $('.update-qty-btn').click(function (e) {

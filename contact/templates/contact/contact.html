@@ -45,6 +45,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super }}
 <script type="text/javascript">
     $(document).ready(function () {
         $('#id_regarding_an_order').change(function () {
