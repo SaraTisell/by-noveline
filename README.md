@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [By Noveline](#by-noveline)
+- [SEO & Marketing Research](SEO_MARKETING_RESEARCH.md)
 - [UX](#ux)
 - [Agile Methodology](#agile-methodology)
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
@@ -33,6 +34,10 @@ This e-commerce website was built on the request of a family owned business that
 BY Noveline offers elegant and luxury engagement, and weddingrings that is made on request from the customer.
 
 *By Noveline is a fictive business*
+
+### SEO & Marketing Research
+
+[Read Document](SEO_MARKETING_RESEARCH.md)
 
 ### UX
 
