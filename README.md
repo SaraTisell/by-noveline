@@ -15,6 +15,7 @@
   - [Logotype](#logotype)
     - [Favicon](#favicon)
   - [Color Scheme](#color-scheme)
+  - [Wireframes](#wireframes)
 - [Technologies Used](#technologies-used)
 - [Testing](#testing)
   - [Responsiveness & Performance](#responsive-&-performance)
@@ -172,6 +173,25 @@ The user is able to search for specific products through the search form.
 #### Color Scheme 
 
 ![color scheme](docs/readme-img/bn-color-scheme.png)
+
+#### Wireframes
+
+Wireframe Mobile Device
+
+![wireframe mobile](docs/readme-img/bn-wireframe-mobile.png)
+
+Wireframe Mobile Device
+
+![wireframe mobile menu](docs/readme-img/bn-wireframe-mobile-menu.png)
+
+Wireframe Tablet
+
+![wireframe tablet](docs/readme-img/bn-wireframe-tablet.png)
+
+Wireframe Desktop
+
+![wireframe tablet](docs/readme-img/bn-wiraframe-desktop.png)
+
 
 ### Technologies Used
 
