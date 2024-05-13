@@ -239,9 +239,39 @@ Wireframe Desktop
 
 ### Feature Testing
 
-### Feature Testing
+Features were tested and documentet. Results & notes is showed below
 
+#### Navigation Testing
 
+![Navigation testing](docs/readme-img/bn-test-navigation.png)
+
+#### Account Testing
+
+![Account testing](docs/readme-img/bn-test-log.png)
+
+#### Profile Testing
+
+![Profile testing](docs/readme-img/bn-test-profile.png)
+
+#### Wishlist Testing
+
+![Wishlist testing](docs/readme-img/bn-test-wishlist.png)
+
+#### Shopping Cart Testing
+
+![Shopping cart testing](docs/readme-img/bn-test-cart.png)
+
+#### Checkout Testing
+
+![Checkout testing](docs/readme-img/bn-test-checkout.png)
+
+#### Contact Testing
+
+![Contact testing](docs/readme-img/bn-test-contact.png)
+
+#### Subscribe Testing
+
+![Subscribe testing](docs/readme-img/bn-test-sub.png)
 
 ## Deployment
 
