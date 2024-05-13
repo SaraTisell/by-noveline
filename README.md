@@ -68,6 +68,8 @@ Full project planning can be found here:
 
 #### Navigation
 
+![Header Navigation](docs/readme-img/bn-navigation.png)
+
 Navigation meanu is visible for all users and placed in the header.
 * Logotype
   * Navigates a user back to home page
@@ -77,23 +79,43 @@ Navigation meanu is visible for all users and placed in the header.
     * Gold Rings
     * Silver Rings
     * Ring Sets
-* Profile
-  * Regular User
-    * SignUp
-    * Login
-  * User with account 
-    * My Profile
+
+Profile
+<details>
+<summary>Regular User</summary>
+<img src="docs/readme-img/bn-reg-user.png">
+</details>
+
+* SignUp 
+* Login
+
+<details>
+<summary>User with account</summary>
+<img src="docs/readme-img/bn-auth-user.png">
+</details>
+
+  * My Profile
       * Order History
       * Personal Info
       * Wishlist
-      * Logout
-  * Admin user 
-    * Orders
-    * Product Management
-    * Inbox
-    * Logout
-* Shopping Cart
-  * Checkout
+  * Logout
+
+<details>
+<summary>Admin user</summary>
+<img src="docs/readme-img/bn-admin-menu.png">
+</details>
+
+  * Orders
+  * Product Management
+  * Inbox
+  * Logout
+
+<details>
+<summary>Shopping Cart</summary>
+<img src="docs/readme-img/bn-shopping-cart.png">
+</details>
+
+  * Checkout - is reached from the shopping cart
 
 #### Footer Navigation
 
