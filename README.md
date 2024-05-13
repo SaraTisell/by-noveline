@@ -369,6 +369,10 @@ Wireframe Desktop
 
 #### Lighthouse Testing
 
+![Lighthouse](docs/readme-img/bn-lighthouse.png)
+
+The result shows evidence that the website do need some improvements in Performance, Accessibility & Best Practices.
+
 ### Code Validation 
 
 #### HTML Validation
