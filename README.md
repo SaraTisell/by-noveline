@@ -28,7 +28,7 @@
 
 ***
 
-### By Noveline
+## By Noveline
 
 This e-commerce website was built on the request of a family owned business that wanted to expand their target market. Their customers was before obligated to visit a pysical store to explore the products and By Novelines market was limited. By building them a userfriendly and elegant webshop could By Novelines market expand World Wide.
 
@@ -36,15 +36,15 @@ BY Noveline offers elegant and luxury engagement, and weddingrings that is made 
 
 *By Noveline is a fictive business*
 
-### SEO & Marketing Research
+## SEO & Marketing Research
 
 [Read Document](SEO_MARKETING_RESEARCH.md)
 
-### UX
+## UX
 
 The goal for the e-commerce website By Noveline is to create a user-friendly and secure application where customers can browse products, save them to their shopping cart and then purchase them with full security through Stripe Payments.
 
-### Agile Methodology
+## Agile Methodology
 
 Agile was used for efficient planning and development of the website, ensuring alignment with UX requirements.
 
@@ -53,7 +53,7 @@ Agile was used for efficient planning and development of the website, ensuring a
 Full project planning can be found here:
 [Project Kanban Board for By Noveline](https://github.com/users/SaraTisell/projects/6)
 
-### Entity-Relationship Diagram
+## Entity-Relationship Diagram
 
 <details>
 <summary>ERD</summary>
@@ -61,11 +61,11 @@ Full project planning can be found here:
 </details>
 
 
-### Features
+## Features
 
-#### Existing Features
+### Existing Features
 
-##### Navigation
+#### Navigation
 
 Navigation meanu is visible for all users and placed in the header.
 * Logotype
@@ -94,7 +94,7 @@ Navigation meanu is visible for all users and placed in the header.
 * Shopping Cart
   * Checkout
 
-###### Footer Navigation
+#### Footer Navigation
 
 * Customer Service
   * Contact us
@@ -160,21 +160,21 @@ Four different pages is displayed at the header menu
 
 The user is able to search for specific products through the search form.
 
-### Design 
+## Design 
 
-#### Logotype
+### Logotype
 
 ![by noveline logotype](docs/readme-img/logo-by-noveline.webp)
 
-#### Favicon
+### Favicon
 
 ![favicon](docs/readme-img/bn-favicon.png)
 
-#### Color Scheme 
+### Color Scheme 
 
 ![color scheme](docs/readme-img/bn-color-scheme.png)
 
-#### Wireframes
+### Wireframes
 
 Wireframe Mobile Device
 
@@ -193,7 +193,7 @@ Wireframe Desktop
 ![wireframe tablet](docs/readme-img/bn-wiraframe-desktop.png)
 
 
-### Technologies Used
+## Technologies Used
 
 * HTML
   * Website structure was developed using HTML as the main language
@@ -229,21 +229,21 @@ Wireframe Desktop
 * Google Fonts
   * Used to add fonts
 
-### Testing
+## Testing
 
-#### Responsiveness & Performance
+### Responsiveness & Performance
 
-##### Lighthouse Testing
+#### Lighthouse Testing
 
-#### Code Validation 
+### Code Validation 
 
-#### Feature Testing
+### Feature Testing
 
-#### Feature Testing
+### Feature Testing
 
 
 
-### Deployment
+## Deployment
 
 The project By Noveline was hosted on GitHub and deployed on Heroku by these steps
 
