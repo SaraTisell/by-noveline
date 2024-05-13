@@ -11,6 +11,7 @@
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
 - [Features](#features)
   - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
 - [Design](#design)
   - [Logotype](#logotype)
     - [Favicon](#favicon)
@@ -159,6 +160,12 @@ Four different pages is displayed at the header menu
 #### Search Function
 
 The user is able to search for specific products through the search form.
+
+### Future Features
+
+#### Wishlist Expansion
+The wishlist feature allowes today a user to save a product to their wishlist, we want to expand these feature further with the ability to save a product with specific size/sizes to their wishlist. The project's app Wishlist does today contain a model called: WishListItem that can be expanded with fields for this future function.
+
 
 ## Design 
 
