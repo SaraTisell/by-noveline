@@ -229,6 +229,19 @@ Wireframe Desktop
 * Google Fonts
   * Used to add fonts
 
+### Testing
+
+#### Responsiveness & Performance
+
+##### Lighthouse Testing
+
+#### Code Validation 
+
+#### Feature Testing
+
+#### Feature Testing
+
+
 
 ### Deployment
 
