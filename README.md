@@ -170,6 +170,8 @@ A user has the possibility to create an account to save and store their personal
 
 #### Shopping Cart
 
+![Shopping cart page](docs/readme-img/bn-shopping-cart-page.png)
+
 A user, with or without an account is able to add/remove products from their shoppingcart. If the user want to purchase, they can easy go to shopping cart and navigate to secure checkout. 
 
 #### Checkout 
