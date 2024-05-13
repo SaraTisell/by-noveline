@@ -14,3 +14,8 @@
   - [Facebook Page](#facebook-page)
   - [Newsletter Subscription](#newsletter-subscription)
   - [Privacy Policy](#privacy-policy)
+
+## Business Model
+By Novelines Business Model is Business to Consumer (B2C).
+
+![Business model](docs/readme-img/bn-business-model.png)
