@@ -188,7 +188,9 @@ A user has their own profile page where they can see their order history, person
 
 #### Wishlist
 
-A user with an account can save products to their wishlist and display these later isnide their own profile page.
+![Wishlist](docs/readme-img/bn-profile-wishlist.png)
+
+A user with an account can save products to their wishlist and display these later isnide their own profile page, the user can remove an product from their wishlist by clicking the "trashcan" icon
 
 #### Admin Features
 
