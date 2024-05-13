@@ -253,6 +253,20 @@ Four different pages is displayed at the header menu, all category pages has the
 * Ring Sets
   * All products in the category ring sets
 
+#### Product Detail Page
+
+![Product detail page](docs/readme-img/bn-product-detail.png)
+
+The product detail page contains:
+* Product Name
+* Description
+* Price
+* Heart icon for adding to wishlist (If the user has an account)
+* Size selection
+* Quantity selection
+* Back to shop link
+* Add to bag button
+
 #### Search Function
 
 ![Search](docs/readme-img/bn-search.png)
