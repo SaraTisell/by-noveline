@@ -259,6 +259,18 @@ Four different pages is displayed at the header menu, all category pages has the
 
 The user is able to search for specific products through the search form.
 
+#### Thank You Page
+
+![Thank you](docs/readme-img/bn-thank-you.png)
+
+The user is redirected to a Thank You page after a "Contact Us" form is submitted.
+
+#### 404 Page
+
+![404](docs/readme-img/bn-404.png)
+
+A custom 404 page to align with the websites design
+
 ### Future Features
 
 #### Wishlist Expansion
