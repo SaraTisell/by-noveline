@@ -148,6 +148,22 @@ The homepage contains four sections
   * Delivered in a beautiful ring box
   * Lifetime warranty
 
+#### Footer
+
+![Footer](docs/readme-img/bn-footer.png)
+
+The footer contains four sections with additional copytight text & Github Link to the creator of the website
+* About Us
+  * Short description about By Noveline
+* Customer Service
+  * Contact Us
+  * Privacy Policy
+* Newsletter Subscription
+* Social Media Links
+  * Facebook
+  * Instagram
+  * Twitter/X
+
 #### Account
 
 A user has the possibility to create an account to save and store their personal information, see order history and save products to their wishlist.
