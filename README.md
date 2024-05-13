@@ -239,6 +239,10 @@ Wireframe Desktop
 
 #### HTML Validation
 
+All HTML code were validated through W3C HTML Validation Service by direct input. Direct input were used due to limitation to access pages.
+
+* Warnings and errors due to the use of Django template snippets.
+
 ![HTML validation](docs/readme-img/bn-html-valid.png)
 
 #### CSS Validation
@@ -249,6 +253,17 @@ CSS code were validated through W3C CSS Validation Service by direct input
 
 ![CSS validation](docs/readme-img/bn-css-valid.png)
 
+#### PEP8 Validation
+
+All py files were validated through CI Python Linter
+
+A large number of files showed error of trailing whitespace & long lines. Most of the files were fixed and are clear except:
+* webook.py & webhook_handler.py
+  * These files are critical for the project's checkout function, and the function was easily broken when attempting to clear errors. Further investigation is needed to properly break these lines to adhere to the guidelines of PEP8.
+
+![PEP8 validation](docs/readme-img/bn-pep8.png)
+
+![PEP8 validation fail](docs/readme-img/bn-pep8-fail.png)
 
 ### Feature Testing
 
