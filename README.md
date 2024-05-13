@@ -195,13 +195,41 @@ A user with an account can save products to their wishlist and display these lat
 #### Admin Features
 
 Admin has their own profile navigation including:
-* Orders
-  * All orders is displayed at this page with information regarding the order
-* Product Management
-  * Add product
+
+<details>
+<summary>Oders</summary>
+<img src="docs/readme-img/bn-admin-orders.png">
+</details>
+
+* All orders is displayed at this page with information regarding the order, by clicking the Order Mumber,full information about the order is displayed
+
+<details>
+<summary>Order Detail</summary>
+<img src="docs/readme-img/bn-admin-order-detail.png">
+</details>
+
+* All information about the order is listed here including function to delete the order
+
+<details>
+<summary>Product Management</summary>
+<img src="docs/readme-img/bn-product-management.png">
+</details>
+
   * Edit product
   * Delete product
-* Inbox
+
+<details>
+<summary>Add Product</summary>
+<img src="docs/readme-img/bn-add-product.png">
+</details>
+
+* Add Product form 
+
+<details>
+<summary>Inbox</summary>
+<img src="docs/readme-img/bn-inbox.png">
+</details>
+
   * Messages sent through the contact form is displayed at inbox page
 
 #### Contact
