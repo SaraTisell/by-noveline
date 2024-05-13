@@ -241,6 +241,15 @@ Wireframe Desktop
 
 ![HTML validation](docs/readme-img/bn-html-valid.png)
 
+#### CSS Validation
+
+CSS code were validated through W3C CSS Validation Service by direct input
+
+* No errors were found in the CSS files
+
+![CSS validation](docs/readme-img/bn-css-valid.png)
+
+
 ### Feature Testing
 
 Features were tested and documentet. Results & notes is showed below
