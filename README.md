@@ -174,13 +174,18 @@ A user has the possibility to create an account to save and store their personal
 
 A user, with or without an account is able to add/remove products from their shoppingcart. If the user want to purchase, they can easy go to shopping cart and navigate to secure checkout. 
 
-#### Checkout 
+#### Checkout
+
+![Checkout page](docs/readme-img/bn-checkout-page.png)
 
 A user is able to fill in valid information and purchase products at the ceckout page. If the user has an account, they are able to save the information to their profile.
 
 #### My Profile
 
+![My profile](docs/readme-img/bn-my-profile.png)
+
 A user has their own profile page where they can see their order history, personal information and wishlist.
+
 #### Wishlist
 
 A user with an account can save products to their wishlist and display these later isnide their own profile page.
