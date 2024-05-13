@@ -166,6 +166,9 @@ The user is able to search for specific products through the search form.
 #### Wishlist Expansion
 The wishlist feature allowes today a user to save a product to their wishlist, we want to expand these feature further with the ability to save a product with specific size/sizes to their wishlist. The project's app Wishlist does today contain a model called: WishListItem that can be expanded with fields for this future function.
 
+#### Quick Buy
+
+Today can a product only be added to the cart from the products detail page, we would like to expand the add to cart function in the future by letting the user add a product to the cart from the category pages by adding a "Add to cart button". Some logic need to be done for this as the user must select a size for the desired product, the idea is to add a button that triggers a popup with size selection and a button that saves the product to the users cart.
 
 ## Design 
 
