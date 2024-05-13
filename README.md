@@ -237,6 +237,10 @@ Wireframe Desktop
 
 ### Code Validation 
 
+#### HTML Validation
+
+![HTML validation](docs/readme-img/bn-html-valid.png)
+
 ### Feature Testing
 
 Features were tested and documentet. Results & notes is showed below
