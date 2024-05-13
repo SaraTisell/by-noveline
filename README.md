@@ -454,3 +454,30 @@ The project By Noveline was hosted on GitHub and deployed on Heroku by these ste
   * Select (main) branch
   * Click Deploy Branch
 * Open app to view the live site
+
+## Credits
+
+#### Code
+* Boutique Ado Walkthrough
+* [Slug for products](https://learndjango.com/tutorials/django-slug-tutorial)
+* [Search term for search results](https://stackoverflow.com/questions/70824664/how-to-display-search-term-on-search-results-page-in-django)
+
+#### Images
+* [Canva](https://www.canva.com/)
+* [Pexels](https://www.pexels.com)
+
+#### Other
+* [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
+* [To Create Sitemap](https://www.xml-sitemaps.com/)
+* [Create Favicon](https://favicon.io/)
+
+#### Insperation
+* [Advantages Icons](https://safira.com/se)
+* [Product Detail & Home Page](https://www.guldfynd.se/)
+
+## Special Thanks & Acknowledgements
+
+* To my mentor for the greates support and good advices during the development of this project
+* To Code Institutes Tutor Support for excellent help when needed
+* To my family who have been very supportive during this challengin project
+* To the slack community where almost every answear to a question can be found
