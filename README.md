@@ -234,11 +234,15 @@ Admin has their own profile navigation including:
 
 #### Contact
 
+![Contact page](docs/readme-img/bn-contact-page.png)
+
 A user is able to send in a contact form if they desire to get in touch with the team at By Noveline.
 
 #### Product Pages
 
-Four different pages is displayed at the header menu
+![All products](docs/readme-img/bn-all-products.png)
+
+Four different pages is displayed at the header menu, all category pages has the same layout.
 
 * All products
   * Includes all product avaiable in the store
@@ -250,6 +254,8 @@ Four different pages is displayed at the header menu
   * All products in the category ring sets
 
 #### Search Function
+
+![Search](docs/readme-img/bn-search.png)
 
 The user is able to search for specific products through the search form.
 
