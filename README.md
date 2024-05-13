@@ -129,7 +129,24 @@ A favicon inspired by the logotype is implemented to imporve ux. The favicon hel
 
 #### Home Page 
 
-The homepage display insperation image with link to product page.
+![Homepage](docs/readme-img/bn-homepage.png)
+![Homepage](docs/readme-img/bn-homepage-2.png)
+
+The homepage contains four sections 
+* Banner
+  * Inspiration Image with button to All Products page
+* Sparkling News
+  * The 4 latest products is displayed
+* Category Carousel
+  * Images with links to respective category
+    * Gold Rings
+    * Silver Rings
+    * Ring Sets
+* Advantage Icons (Short description of By Novelines benefits)
+  * Minimum 1 Carat
+  * Made of durable materials
+  * Delivered in a beautiful ring box
+  * Lifetime warranty
 
 #### Account
 
