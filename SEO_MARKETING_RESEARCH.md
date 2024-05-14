@@ -11,7 +11,7 @@
   - [Keyword Research](#keyword-research)
     - [META Tags](#meta-tags)
   - [Sitemap](#sitemap)
-  - [robots.txt file](#robots.txt-file)
+    - [robots.txt file](#robots.txt-file)
 - [Marketing Strategies](#marketing-strategies)
   - [Facebook Page](#facebook-page)
   - [Newsletter Subscription](#newsletter-subscription)
@@ -110,4 +110,4 @@ A sitemap.xml file is included to help search engine crawlers with the indexing 
 
 #### robots.txt file
 
-Additional to the sitemap, a robots.txt file need to be included in the root directory to hinder search enginer crawlers to index pages that should not be indexed due to private content that should not be visible for other users.
+Additional to the sitemap, a robots.txt file is included in the root directory to hinder search enginer crawlers to index pages that should not be indexed due to private content that should not be visible for other users.
