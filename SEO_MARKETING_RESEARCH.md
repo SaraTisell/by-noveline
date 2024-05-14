@@ -6,6 +6,7 @@
 - [Target Market](#target-market)
 - [Competition Research](#competition-research)
   - [SWOT Analysis](#swot-analysis)
+  - [Competition](#competition)
 - [SEO Improvements](#seo-improvements)
   - [Keyword Research](#keyword-research)
     - [META Tags](#meta-tags)
@@ -44,3 +45,8 @@ A brief SWOT Analysis were made for By Noveline to point out Strengths, Weakness
 ### Competition
 
 The Competition for By Noveline is very strong, as the market is saturated with established companies. The research highlights the need for the business not only to be strong but also to have an exceptional marketing strategy to carve out its niche among the competition. The primary challenge lies in the broader product offerings and expansive target markets of major competitors, which fosters customer loyalty in the pursuit of engagement and wedding rings. By Noveline's specialization in rings alone presents a unique barrier, requiring innovative methods to assert its presence and gain market share within the industry. Strategic differentiation and commitment to quality and customer satisfaction will be critical to overcoming these challenges and establishing By Noveline as a leading player in the industry.
+
+## SEO Improvements
+
+Site Engine Optimisation is crucial for improving online visibility, attracting organic traffic and increasing website ranking on SERPs (search engine results pages). By optimazing By Novelines website content, research and implement relevant *Key Words* in META tags, and add a sitemap for the websites structure to help search engine crawlers to index the site's pages, the business is more likely to reach their target market leading to increased conversions and sales.
+
