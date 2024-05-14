@@ -56,11 +56,17 @@ Full project planning can be found here:
 
 ## Entity-Relationship Diagram
 
+ERD's was made to design the database and the relation between the tables. Final ERD's was created with [DBeaver](https://dbeaver.io/)
+
 <details>
-<summary>ERD</summary>
+<summary>Planning ERD</summary>
 <img src="docs/readme-img/bn-erd-planning.png">
 </details>
 
+<details>
+<summary>Final ERD</summary>
+<img src="docs/readme-img/bn-final-erd.png">
+</details>
 
 ## Features
 
