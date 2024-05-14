@@ -111,3 +111,25 @@ A sitemap.xml file is included to help search engine crawlers with the indexing 
 #### robots.txt file
 
 Additional to the sitemap, a robots.txt file is included in the root directory to hinder search enginer crawlers to index pages that should not be indexed due to private content that should not be visible for other users.
+
+## Marketing Strategies
+
+By Novelines main Marketing Strategies icludes *Content Marketing*, *Social Media Marketing* and *Email Marketing*, all of which synergize to effectivly promote By Noveline.
+
+Creating and distributing valuable and relevant content for the By Noveline Brand enables meaningful engagement with the target market, fostering trust and loyalty while driving brand awareness. This content is then used for *Social Media Marketing* and *Email Marketing*
+
+### Facebook Page
+
+Having an active account and a vibrant Facebook page enables By Noveline to regularly post content and engage with its audience effectively. Facebook's extensive user base and diverse advertising options further enhance By Noveline's marketing efforts, allowing for targeted outreach and impactful brand promotion. Leveraging these advantages, By Noveline can cultivate a strong online presence, foster community engagement, and drive meaningful interactions with its audience on the platform.
+
+![Facebook page](docs/readme-img/bn-facebook-page.png)
+
+### Newsletter Subscription
+
+Email marketing is a powerful tool for By Noveline, users are able to subscribe to the newsletter directly on the website. These newsletters deliver timely and relevant information about the site and its products, keeping subscribers engaged and informed about the latest products and updates from By Noveline. This personalized approach to communication helps nurture relationships with both former and future potential customers.
+
+![Subscribe to newsletter](docs/readme-img/bn-subscribe.png)
+
+*Email example*
+
+![Newsletter](docs/readme-img/bn-newsletter.png)
