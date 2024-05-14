@@ -15,7 +15,7 @@
 - [Marketing Strategies](#marketing-strategies)
   - [Facebook Page](#facebook-page)
   - [Newsletter Subscription](#newsletter-subscription)
-  - [Privacy Policy](#privacy-policy)
+
 
 ## Business Model
 By Novelines Business Model for Business to Consumer (B2C).
@@ -128,8 +128,11 @@ Having an active account and a vibrant Facebook page enables By Noveline to regu
 
 Email marketing is a powerful tool for By Noveline, users are able to subscribe to the newsletter directly on the website. These newsletters deliver timely and relevant information about the site and its products, keeping subscribers engaged and informed about the latest products and updates from By Noveline. This personalized approach to communication helps nurture relationships with both former and future potential customers.
 
+*Email Input*
+
 ![Subscribe to newsletter](docs/readme-img/bn-subscribe.png)
 
 *Email example*
 
 ![Newsletter](docs/readme-img/bn-newsletter.png)
+
