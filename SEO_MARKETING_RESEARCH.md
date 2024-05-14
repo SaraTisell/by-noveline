@@ -103,3 +103,11 @@ By avoiding misleading content and context, it is important to use the right key
 *Meta Tags for Ring Sets*
 
 ![Meta tags ring sets](docs/readme-img/bn-meta-ring-set.png)
+
+### Sitemap
+
+A sitemap.xml file is included to help search engine crawlers with the indexing process to ensure all relevant pages are included in search results. The file outlines the websites structure, listining all pages and its relationships, providing a comprehensive guide for search engine algorithms. By including the sitemap, By Novelines visibility and accessibility to users improves, ultimately optimizing the SEO performance.
+
+#### robots.txt file
+
+Additional to the sitemap, a robots.txt file need to be included in the root directory to hinder search enginer crawlers to index pages that should not be indexed due to private content that should not be visible for other users.
