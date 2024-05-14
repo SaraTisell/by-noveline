@@ -48,5 +48,33 @@ The Competition for By Noveline is very strong, as the market is saturated with 
 
 ## SEO Improvements
 
-Site Engine Optimisation is crucial for improving online visibility, attracting organic traffic and increasing website ranking on SERPs (search engine results pages). By optimazing By Novelines website content, research and implement relevant *Key Words* in META tags, and add a sitemap for the websites structure to help search engine crawlers to index the site's pages, the business is more likely to reach their target market leading to increased conversions and sales.
+Site Engine Optimisation is crucial for improving online visibility, attracting organic traffic and increasing website ranking on SERPs (search engine results pages). By optimazing By Novelines website content, research and implement relevant *Keywords* in META tags, and add a sitemap for the websites structure to help search engine crawlers to index the site's pages, the business is more likely to reach their target market leading to increased conversions and sales.
+
+### Keyword Research
+Researching and choosing relevant keywords that are in line with By Novelines target markets search intent and implement these keywords naturally and strategically into the website content will help the business to rank higher on SERPs and drive relevant traffic.
+
+#### Choosing Keywords
+[Wordtracker](https://www.wordtracker.com/) was used for the purpose to research relevant keywords to use for By Noveline SEO. 
+
+During the research of relevant keywords there was focus on selecting terms based on their volume and level of competition. One notable keyword for By Noveline is *wedding rings* instead of *wedding ring*, as it offers a significantly higher search volume and lower competition. This stretgic approach was used for the selected keywords to optimize By Novelines online visibility and competitiveness within the market.
+
+![Wordtracker wedding rings](docs/readme-img/bn-seo-keyword.png)
+
+![Wordtracker diamond ring](docs/readme-img/bn-diamond-keyword.png)
+
+Keywords:
+* by noveline
+* engagement rings
+* wedding rings
+* wedding ring sets
+* gold
+* gold rings for women
+* gold ring for men
+* white gold
+* rose gold
+* silver 
+* silver rings
+* sterling silver rings
+* diamond ring
+* 1 carat diamond ring
 
