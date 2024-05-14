@@ -80,7 +80,7 @@ Choosen Keywords:
 * wedding ring sets
 * gold
 * gold rings for women
-* gold ring for men
+* gold rings for men
 * white gold
 * rose gold
 * silver 
@@ -89,3 +89,17 @@ Choosen Keywords:
 * diamond ring
 * 1 carat diamond ring
 
+#### META Tags
+
+To implement the choosen keywords into the HTML code for SEO we were using META Tags that is placed inside the "head" section. The META Tags includes "meta name=description" & "meta name=keywords". These are used to help search engines to understand the content and context of the page to enhancing the visability for users searching for relevant keywords.
+
+##### Using right Keyword at the Right Page
+By avoiding misleading content and context, it is important to use the right keyword on the right page; there is no meaning in adding "gold rings for men" on a page featuring "Silver Rings." Therefore, aligning the selected keywords with the specific products on each page provides clarity for both search engines and users and helps improve the effectiveness of By Noveline's SEO strategy.
+
+*Meta Tags for Silver Rings*
+
+![Meta tags](docs/readme-img/bn-meta-tags.png)
+
+*Meta Tags for Ring Sets*
+
+![Meta tags ring sets](docs/readme-img/bn-meta-ring-set.png)
