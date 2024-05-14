@@ -62,7 +62,18 @@ During the research of relevant keywords there was focus on selecting terms base
 
 ![Wordtracker diamond ring](docs/readme-img/bn-diamond-keyword.png)
 
-Keywords:
+Keywords Ideas:
+* by noveline
+* wedding ring
+* ring sets
+* rose gold ring
+* silver ring
+* gold ring
+* engagement rings
+* diamond rings
+* wedding ring set
+
+Choosen Keywords:
 * by noveline
 * engagement rings
 * wedding rings
